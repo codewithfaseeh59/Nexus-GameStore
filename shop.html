@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS — Shop</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./Assets/css/main.css">
+    <link rel="stylesheet" href="./Assets/css/component.css">
+    <link rel="stylesheet" href="./Assets/css/responsive.css">
+</head>
+
+<body>
+
+
+
+    <div id="loader">
+        <div class="loader-bg"></div>
+        <div class="loader-content">
+            <div class="loader-logo">
+                <span>N</span>
+                <span>E</span>
+                <span>X</span>
+                <span>U</span>
+                <span>S</span>
+            </div>
+            <div class="loader-tagline">GEAR UP. DOMINATE.</div>
+            <div class="loader-progress">
+                <div class="loader-progress-bar"></div>
+            </div>
+            <div class="loader-percent">0%</div>
+        </div>
+        <div class="loader-split-top"></div>
+        <div class="loader-split-bottom"></div>
+    </div>
+
+
+    <div id="wrapper">
+
+        <header id="header">
+            <nav id="navbar">
+                <a href="index.html" class="nav-logo">NEX<span>US</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html" class="active">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <div class="nav-search">
+                        <input type="text" placeholder="Search products...">
+                        <button class="search-icon">
+                            <svg viewBox="0 0 24 24">
+                                <circle cx="11" cy="11" r="8" />
+                                <path d="m21 21-4.35-4.35" />
+                            </svg>
+                        </button>
+                    </div>
+                    <a href="cart.html" class="nav-cart">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                            <line x1="3" y1="6" x2="21" y2="6" />
+                            <path d="M16 10a4 4 0 0 1-8 0" />
+                        </svg>
+                        <span class="cart-count">0</span>
+                    </a>
+                    <button class="hamburger" id="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </nav>
+        </header>
+
+        <div class="mobile-overlay" id="mobileOverlay"></div>
+        <nav class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <main id="main">
+
+
+            <section id="shop-banner">
+                <div class="shop-banner-bg">
+                    <img src="./Assets/Images/shop-banner.jpg" alt="" class="shop-banner-img">
+                    <div class="shop-banner-overlay"></div>
+                    <div class="shop-banner-glow"></div>
+                </div>
+                <div class="shop-banner-content">
+                    <p class="section-tag">// All Products</p>
+                    <h1 class="shop-banner-heading">SHOP <span>GEAR</span></h1>
+                    <div class="breadcrumb">
+                        <a href="index.html">Home</a>
+                        <span>/</span>
+                        <span class="breadcrumb-active">Shop</span>
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="shop-layout">
+
+
+                <aside class="shop-sidebar">
+
+
+                    <div class="sidebar-block">
+                        <h4 class="sidebar-heading">Categories</h4>
+                        <ul class="sidebar-list">
+                            <li>
+                                <label class="sidebar-check">
+                                    <input type="checkbox" checked data-category="all">
+                                    <span class="checkmark"></span>
+                                    All Products
+                                    <span class="sidebar-count">48</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="sidebar-check">
+                                    <input type="checkbox" data-category="pc">
+                                    <span class="checkmark"></span>
+                                    PC Builds
+                                    <span class="sidebar-count">08</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="sidebar-check">
+                                    <input type="checkbox" data-category="keyboard">
+                                    <span class="checkmark"></span>
+                                    Keyboards
+                                    <span class="sidebar-count">12</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="sidebar-check">
+                                    <input type="checkbox" data-category="mouse">
+                                    <span class="checkmark"></span>
+                                    Mouse
+                                    <span class="sidebar-count">10</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="sidebar-check">
+                                    <input type="checkbox" data-category="console">
+                                    <span class="checkmark"></span>
+                                    Consoles
+                                    <span class="sidebar-count">06</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="sidebar-check">
+                                    <input type="checkbox" data-category="monitor">
+                                    <span class="checkmark"></span>
+                                    Monitors
+                                    <span class="sidebar-count">07</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="sidebar-check">
+                                    <input type="checkbox" data-category="headset">
+                                    <span class="checkmark"></span>
+                                    Headsets
+                                    <span class="sidebar-count">05</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-block">
+                        <h4 class="sidebar-heading">Price Range</h4>
+                        <div class="price-range">
+                            <input type="range" min="0" max="3000" value="3000" class="price-slider" id="priceSlider">
+                            <div class="price-labels">
+                                <span>$0</span>
+                                <span id="priceValue">$3000</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="sidebar-block">
+                        <h4 class="sidebar-heading">Brand</h4>
+                        <ul class="sidebar-list">
+                            <li>
+                                <label class="sidebar-check">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    NEXUS
+                                    <span class="sidebar-count">24</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="sidebar-check">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    Razer
+                                    <span class="sidebar-count">10</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="sidebar-check">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    Logitech
+                                    <span class="sidebar-count">08</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="sidebar-check">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    Sony
+                                    <span class="sidebar-count">06</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                    <div class="sidebar-block">
+                        <h4 class="sidebar-heading">Rating</h4>
+                        <ul class="sidebar-list">
+                            <li>
+                                <label class="sidebar-check">
+                                    <input type="radio" name="rating">
+                                    <span class="checkmark"></span>
+                                    <span class="sidebar-stars">★★★★★</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="sidebar-check">
+                                    <input type="radio" name="rating">
+                                    <span class="checkmark"></span>
+                                    <span class="sidebar-stars">★★★★☆</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="sidebar-check">
+                                    <input type="radio" name="rating">
+                                    <span class="checkmark"></span>
+                                    <span class="sidebar-stars">★★★☆☆</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+
+                </aside>
+
+
+                <div class="shop-products">
+
+
+                    <div class="shop-topbar">
+                        <p class="shop-results">Showing <span>12</span> of <span>48</span> products</p>
+                        <div class="shop-sort">
+                            <label>Sort by:</label>
+                            <select id="sortSelect">
+                                <option value="latest">Latest</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="rating">Top Rated</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="shop-grid">
+
+                        <div class="prod-card" data-category="keyboard" data-price="129" data-rating="5">
+                            <div class="prod-img-wrapper">
+                                <img src="./Assets/Images/prod-1.jpg" alt="Gaming Keyboard">
+                                <div class="prod-overlay"></div>
+                                <button class="prod-wishlist">
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="prod-info">
+                                <span class="prod-tag">Keyboard</span>
+                                <h3 class="prod-name">Nexus MX Pro Keyboard</h3>
+                                <div class="prod-bottom">
+                                    <div class="prod-rating">
+                                        <span class="stars">★★★★★</span>
+                                        <span class="rating-count">(128)</span>
+                                    </div>
+                                    <p class="prod-price">$129<span>.99</span></p>
+                                </div>
+                                <button class="prod-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <div class="prod-card" data-category="mouse" data-price="89" data-rating="5">
+                            <div class="prod-img-wrapper">
+                                <img src="./Assets/Images/prod-2.jpg" alt="Gaming Mouse">
+                                <div class="prod-overlay"></div>
+                                <button class="prod-wishlist">
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="prod-info">
+                                <span class="prod-tag">Mouse</span>
+                                <h3 class="prod-name">Nexus Viper Elite Mouse</h3>
+                                <div class="prod-bottom">
+                                    <div class="prod-rating">
+                                        <span class="stars">★★★★★</span>
+                                        <span class="rating-count">(96)</span>
+                                    </div>
+                                    <p class="prod-price">$89<span>.99</span></p>
+                                </div>
+                                <button class="prod-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <div class="prod-card" data-category="headset" data-price="149" data-rating="4">
+                            <div class="prod-img-wrapper">
+                                <img src="./Assets/Images/prod-3.jpg" alt="Gaming Headset">
+                                <div class="prod-overlay"></div>
+                                <button class="prod-wishlist">
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="prod-info">
+                                <span class="prod-tag">Headset</span>
+                                <h3 class="prod-name">Nexus Sound X1 Headset</h3>
+                                <div class="prod-bottom">
+                                    <div class="prod-rating">
+                                        <span class="stars">★★★★☆</span>
+                                        <span class="rating-count">(74)</span>
+                                    </div>
+                                    <p class="prod-price">$149<span>.99</span></p>
+                                </div>
+                                <button class="prod-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <div class="prod-card" data-category="monitor" data-price="399" data-rating="5">
+                            <div class="prod-img-wrapper">
+                                <img src="./Assets/Images/prod-4.jpg" alt="Gaming Monitor">
+                                <div class="prod-overlay"></div>
+                                <button class="prod-wishlist">
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="prod-info">
+                                <span class="prod-tag">Monitor</span>
+                                <h3 class="prod-name">Nexus Vision 27" Monitor</h3>
+                                <div class="prod-bottom">
+                                    <div class="prod-rating">
+                                        <span class="stars">★★★★★</span>
+                                        <span class="rating-count">(52)</span>
+                                    </div>
+                                    <p class="prod-price">$399<span>.99</span></p>
+                                </div>
+                                <button class="prod-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <div class="prod-card" data-category="pc" data-price="1999" data-rating="5">
+                            <div class="prod-img-wrapper">
+                                <img src="./Assets/Images/prod-5.jpg" alt="Gaming PC">
+                                <div class="prod-overlay"></div>
+                                <button class="prod-wishlist">
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="prod-info">
+                                <span class="prod-tag">PC Build</span>
+                                <h3 class="prod-name">Nexus Titan RTX Build</h3>
+                                <div class="prod-bottom">
+                                    <div class="prod-rating">
+                                        <span class="stars">★★★★★</span>
+                                        <span class="rating-count">(38)</span>
+                                    </div>
+                                    <p class="prod-price">$1,999<span>.99</span></p>
+                                </div>
+                                <button class="prod-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <div class="prod-card" data-category="keyboard" data-price="99" data-rating="4">
+                            <div class="prod-img-wrapper">
+                                <img src="./Assets/Images/prod-6.jpg" alt="Mechanical Keyboard">
+                                <div class="prod-overlay"></div>
+                                <button class="prod-wishlist">
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="prod-info">
+                                <span class="prod-tag">Keyboard</span>
+                                <h3 class="prod-name">Nexus TKL Mechanical</h3>
+                                <div class="prod-bottom">
+                                    <div class="prod-rating">
+                                        <span class="stars">★★★★☆</span>
+                                        <span class="rating-count">(61)</span>
+                                    </div>
+                                    <p class="prod-price">$99<span>.99</span></p>
+                                </div>
+                                <button class="prod-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <div class="prod-card" data-category="console" data-price="69" data-rating="5">
+                            <div class="prod-img-wrapper">
+                                <img src="./Assets/Images/prod-7.jpg" alt="PS5 Controller">
+                                <div class="prod-overlay"></div>
+                                <button class="prod-wishlist">
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="prod-info">
+                                <span class="prod-tag">Console</span>
+                                <h3 class="prod-name">PS5 DualSense Controller</h3>
+                                <div class="prod-bottom">
+                                    <div class="prod-rating">
+                                        <span class="stars">★★★★★</span>
+                                        <span class="rating-count">(210)</span>
+                                    </div>
+                                    <p class="prod-price">$69<span>.99</span></p>
+                                </div>
+                                <button class="prod-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <div class="prod-card" data-category="console" data-price="59" data-rating="4">
+                            <div class="prod-img-wrapper">
+                                <img src="./Assets/Images/prod-8.jpg" alt="Xbox Controller">
+                                <div class="prod-overlay"></div>
+                                <button class="prod-wishlist">
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="prod-info">
+                                <span class="prod-tag">Console</span>
+                                <h3 class="prod-name">Xbox Series X Controller</h3>
+                                <div class="prod-bottom">
+                                    <div class="prod-rating">
+                                        <span class="stars">★★★★☆</span>
+                                        <span class="rating-count">(185)</span>
+                                    </div>
+                                    <p class="prod-price">$59<span>.99</span></p>
+                                </div>
+                                <button class="prod-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <div class="prod-card" data-category="pc" data-price="2499" data-rating="5">
+                            <div class="prod-img-wrapper">
+                                <img src="./Assets/Images/prod-9.jpg" alt="Gaming Chair">
+                                <div class="prod-overlay"></div>
+                                <button class="prod-wishlist">
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="prod-info">
+                                <span class="prod-tag">PC Build</span>
+                                <h3 class="prod-name">Nexus Beast RTX 4090</h3>
+                                <div class="prod-bottom">
+                                    <div class="prod-rating">
+                                        <span class="stars">★★★★★</span>
+                                        <span class="rating-count">(22)</span>
+                                    </div>
+                                    <p class="prod-price">$2,499<span>.99</span></p>
+                                </div>
+                                <button class="prod-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <div class="prod-card" data-category="mouse" data-price="49" data-rating="4">
+                            <div class="prod-img-wrapper">
+                                <img src="./Assets/Images/prod-10.jpg" alt="Gaming Mousepad">
+                                <div class="prod-overlay"></div>
+                                <button class="prod-wishlist">
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="prod-info">
+                                <span class="prod-tag">Mouse</span>
+                                <h3 class="prod-name">Nexus XL RGB Mousepad</h3>
+                                <div class="prod-bottom">
+                                    <div class="prod-rating">
+                                        <span class="stars">★★★★☆</span>
+                                        <span class="rating-count">(143)</span>
+                                    </div>
+                                    <p class="prod-price">$49<span>.99</span></p>
+                                </div>
+                                <button class="prod-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <div class="prod-card" data-category="console" data-price="499" data-rating="5">
+                            <div class="prod-img-wrapper">
+                                <img src="./Assets/Images/prod-11.jpg" alt="Gaming Controller">
+                                <div class="prod-overlay"></div>
+                                <button class="prod-wishlist">
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="prod-info">
+                                <span class="prod-tag">Console</span>
+                                <h3 class="prod-name">PlayStation 5 Console</h3>
+                                <div class="prod-bottom">
+                                    <div class="prod-rating">
+                                        <span class="stars">★★★★★</span>
+                                        <span class="rating-count">(320)</span>
+                                    </div>
+                                    <p class="prod-price">$499<span>.99</span></p>
+                                </div>
+                                <button class="prod-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <div class="prod-card" data-category="pc" data-price="349" data-rating="4">
+                            <div class="prod-img-wrapper">
+                                <img src="./Assets/Images/prod-12.jpg" alt="PC Components">
+                                <div class="prod-overlay"></div>
+                                <button class="prod-wishlist">
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="prod-info">
+                                <span class="prod-tag">PC Build</span>
+                                <h3 class="prod-name">Nexus RTX 4070 Bundle</h3>
+                                <div class="prod-bottom">
+                                    <div class="prod-rating">
+                                        <span class="stars">★★★★☆</span>
+                                        <span class="rating-count">(47)</span>
+                                    </div>
+                                    <p class="prod-price">$349<span>.99</span></p>
+                                </div>
+                                <button class="prod-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="load-more-wrapper">
+                        <button class="load-more-btn">
+                            Load More <span>↓</span>
+                        </button>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <footer id="footer">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">NEX<span>US</span></a>
+                    <p class="footer-tagline">Gear up. Dominate. Repeat.</p>
+                    <div class="footer-socials">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-col-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-col-heading">Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="shop.html">PC Builds</a></li>
+                        <li><a href="shop.html">Keyboards</a></li>
+                        <li><a href="shop.html">Mouse</a></li>
+                        <li><a href="shop.html">Consoles</a></li>
+                        <li><a href="shop.html">Monitors</a></li>
+                        <li><a href="shop.html">Headsets</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-col-heading">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="#">Track Order</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-newsletter">
+                    <h4 class="footer-col-heading">Newsletter</h4>
+                    <p class="footer-newsletter-text">Get exclusive deals and latest drops straight to your inbox.</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Your email address">
+                        <button class="newsletter-btn">
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copy">© 2024 NEXUS. All rights reserved.</p>
+                <p class="footer-credit">Designed & Built with <span>♥</span></p>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/sheryjs/dist/Shery.js"></script>
+    <script src="./Assets/js/main.js"></script>
+    <script src="./Assets/js/shop.js"></script>
+
+</body>
+
+</html>

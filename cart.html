@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS — Cart</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./Assets/css/main.css">
+    <link rel="stylesheet" href="./Assets/css/component.css">
+    <link rel="stylesheet" href="./Assets/css/responsive.css">
+</head>
+
+<body>
+
+    <div id="loader">
+        <div class="loader-bg"></div>
+        <div class="loader-content">
+            <div class="loader-logo">
+                <span>N</span>
+                <span>E</span>
+                <span>X</span>
+                <span>U</span>
+                <span>S</span>
+            </div>
+            <div class="loader-tagline">GEAR UP. DOMINATE.</div>
+            <div class="loader-progress">
+                <div class="loader-progress-bar"></div>
+            </div>
+            <div class="loader-percent">0%</div>
+        </div>
+        <div class="loader-split-top"></div>
+        <div class="loader-split-bottom"></div>
+    </div>
+
+    <div id="wrapper">
+
+        <header id="header">
+            <nav id="navbar">
+                <a href="index.html" class="nav-logo">NEX<span>US</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <div class="nav-search">
+                        <input type="text" placeholder="Search products...">
+                        <button class="search-icon">
+                            <svg viewBox="0 0 24 24">
+                                <circle cx="11" cy="11" r="8" />
+                                <path d="m21 21-4.35-4.35" />
+                            </svg>
+                        </button>
+                    </div>
+                    <a href="cart.html" class="nav-cart">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                            <line x1="3" y1="6" x2="21" y2="6" />
+                            <path d="M16 10a4 4 0 0 1-8 0" />
+                        </svg>
+                        <span class="cart-count">3</span>
+                    </a>
+                    <button class="hamburger" id="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </nav>
+        </header>
+
+        <div class="mobile-overlay" id="mobileOverlay"></div>
+        <nav class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <main id="main">
+
+
+            <div class="product-breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span class="breadcrumb-active">Cart</span>
+            </div>
+
+            <div class="cart-heading">
+                <p class="section-tag">// Your Cart</p>
+                <h1 class="cart-title">SHOPPING <span>CART</span></h1>
+            </div>
+            <section id="cart-layout">
+
+                <div class="cart-items">
+
+                    <div class="cart-table-head">
+                        <span>Product</span>
+                        <span>Price</span>
+                        <span>Quantity</span>
+                        <span>Subtotal</span>
+                        <span></span>
+                    </div>
+
+                    <div class="cart-item" data-price="129.99">
+                        <div class="cart-item-product">
+                            <div class="cart-item-img">
+                                <img src="./Assets/Images/prod-1.jpg" alt="Gaming Keyboard">
+                            </div>
+                            <div class="cart-item-details">
+                                <span class="cart-item-tag">Keyboard</span>
+                                <h3 class="cart-item-name">Nexus MX Pro Keyboard</h3>
+                            </div>
+                        </div>
+                        <p class="cart-item-price">$129.99</p>
+                        <div class="cart-item-qty">
+                            <div class="qty-selector">
+                                <button class="qty-btn cart-qty-minus">−</button>
+                                <span class="qty-value">1</span>
+                                <button class="qty-btn cart-qty-plus">+</button>
+                            </div>
+                        </div>
+                        <p class="cart-item-subtotal">$129.99</p>
+                        <button class="cart-item-remove">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+
+                    <div class="cart-item" data-price="89.99">
+                        <div class="cart-item-product">
+                            <div class="cart-item-img">
+                                <img src="./Assets/Images/prod-2.jpg" alt="Gaming Mouse">
+                            </div>
+                            <div class="cart-item-details">
+                                <span class="cart-item-tag">Mouse</span>
+                                <h3 class="cart-item-name">Nexus Viper Elite Mouse</h3>
+                            </div>
+                        </div>
+                        <p class="cart-item-price">$89.99</p>
+                        <div class="cart-item-qty">
+                            <div class="qty-selector">
+                                <button class="qty-btn cart-qty-minus">−</button>
+                                <span class="qty-value">1</span>
+                                <button class="qty-btn cart-qty-plus">+</button>
+                            </div>
+                        </div>
+                        <p class="cart-item-subtotal">$89.99</p>
+                        <button class="cart-item-remove">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+
+                    <div class="cart-item" data-price="149.99">
+                        <div class="cart-item-product">
+                            <div class="cart-item-img">
+                                <img src="./Assets/Images/prod-3.jpg" alt="Gaming Headset">
+                            </div>
+                            <div class="cart-item-details">
+                                <span class="cart-item-tag">Headset</span>
+                                <h3 class="cart-item-name">Nexus Sound X1 Headset</h3>
+                            </div>
+                        </div>
+                        <p class="cart-item-price">$149.99</p>
+                        <div class="cart-item-qty">
+                            <div class="qty-selector">
+                                <button class="qty-btn cart-qty-minus">−</button>
+                                <span class="qty-value">1</span>
+                                <button class="qty-btn cart-qty-plus">+</button>
+                            </div>
+                        </div>
+                        <p class="cart-item-subtotal">$149.99</p>
+                        <button class="cart-item-remove">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+
+                    <div class="cart-coupon">
+                        <input type="text" placeholder="Coupon code...">
+                        <button class="btn-primary">Apply</button>
+                    </div>
+
+                </div>
+
+                <div class="cart-summary">
+                    <h3 class="cart-summary-heading">Order Summary</h3>
+
+                    <div class="summary-rows">
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span id="summarySubtotal">$369.97</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Shipping</span>
+                            <span class="summary-free">Free</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Tax (8%)</span>
+                            <span id="summaryTax">$29.60</span>
+                        </div>
+                    </div>
+
+                    <div class="summary-divider"></div>
+
+                    <div class="summary-total">
+                        <span>Total</span>
+                        <span id="summaryTotal">$399.57</span>
+                    </div>
+
+                    <a href="#" class="btn-primary checkout-btn">
+                        <i class="fas fa-lock"></i>
+                        Proceed to Checkout
+                    </a>
+
+                    <a href="shop.html" class="cart-continue">
+                        ← Continue Shopping
+                    </a>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <footer id="footer">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">NEX<span>US</span></a>
+                    <p class="footer-tagline">Gear up. Dominate. Repeat.</p>
+                    <div class="footer-socials">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-col-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-col-heading">Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="shop.html">PC Builds</a></li>
+                        <li><a href="shop.html">Keyboards</a></li>
+                        <li><a href="shop.html">Mouse</a></li>
+                        <li><a href="shop.html">Consoles</a></li>
+                        <li><a href="shop.html">Monitors</a></li>
+                        <li><a href="shop.html">Headsets</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-col-heading">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="#">Track Order</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-newsletter">
+                    <h4 class="footer-col-heading">Newsletter</h4>
+                    <p class="footer-newsletter-text">Get exclusive deals and latest drops straight to your inbox.</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Your email address">
+                        <button class="newsletter-btn">
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copy">© 2024 NEXUS. All rights reserved.</p>
+                <p class="footer-credit">Designed & Built with <span>♥</span></p>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/sheryjs/dist/Shery.js"></script>
+    <script src="./Assets/js/main.js"></script>
+    <script src="./Assets/js/cart.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS — Product</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./Assets/css/main.css">
+    <link rel="stylesheet" href="./Assets/css/component.css">
+    <link rel="stylesheet" href="./Assets/css/responsive.css">
+</head>
+
+<body>
+
+    <div id="loader">
+        <div class="loader-bg"></div>
+        <div class="loader-content">
+            <div class="loader-logo">
+                <span>N</span>
+                <span>E</span>
+                <span>X</span>
+                <span>U</span>
+                <span>S</span>
+            </div>
+            <div class="loader-tagline">GEAR UP. DOMINATE.</div>
+            <div class="loader-progress">
+                <div class="loader-progress-bar"></div>
+            </div>
+            <div class="loader-percent">0%</div>
+        </div>
+        <div class="loader-split-top"></div>
+        <div class="loader-split-bottom"></div>
+    </div>
+
+    <div id="wrapper">
+
+        <header id="header">
+            <nav id="navbar">
+                <a href="index.html" class="nav-logo">NEX<span>US</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html" class="active">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <div class="nav-search">
+                        <input type="text" placeholder="Search products...">
+                        <button class="search-icon">
+                            <svg viewBox="0 0 24 24">
+                                <circle cx="11" cy="11" r="8" />
+                                <path d="m21 21-4.35-4.35" />
+                            </svg>
+                        </button>
+                    </div>
+                    <a href="cart.html" class="nav-cart">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                            <line x1="3" y1="6" x2="21" y2="6" />
+                            <path d="M16 10a4 4 0 0 1-8 0" />
+                        </svg>
+                        <span class="cart-count">0</span>
+                    </a>
+                    <button class="hamburger" id="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </nav>
+        </header>
+
+        <div class="mobile-overlay" id="mobileOverlay"></div>
+        <nav class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <main id="main">
+
+            <div class="product-breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <a href="shop.html">Shop</a>
+                <span>/</span>
+                <span class="breadcrumb-active">Nexus MX Pro Keyboard</span>
+            </div>
+
+            <section id="product-section">
+
+                <div class="product-images">
+
+                    <div class="product-thumbnails">
+                        <div class="thumb active" data-img="./Assets/Images/product-main.jpg">
+                            <img src="./Assets/Images/product-main.jpg" alt="Main">
+                        </div>
+                        <div class="thumb" data-img="./Assets/Images/product-thumb-1.jpg">
+                            <img src="./Assets/Images/product-thumb-1.jpg" alt="Thumb 1">
+                        </div>
+                        <div class="thumb" data-img="./Assets/Images/product-thumb-2.jpg">
+                            <img src="./Assets/Images/product-thumb-2.jpg" alt="Thumb 2">
+                        </div>
+                        <div class="thumb" data-img="./Assets/Images/product-thumb-3.jpg">
+                            <img src="./Assets/Images/product-thumb-3.jpg" alt="Thumb 3">
+                        </div>
+                    </div>
+
+                    <div class="product-main-img">
+                        <img src="./Assets/Images/product-main.jpg" alt="Nexus MX Pro Keyboard" id="mainProductImg">
+                        <div class="product-img-glow"></div>
+                    </div>
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="prod-tag">Keyboard</span>
+
+                    <h1 class="product-name">Nexus MX Pro Keyboard</h1>
+
+                    <div class="product-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">(128 Reviews)</span>
+                    </div>
+
+                    <div class="product-price">
+                        <span class="price-current">$129<span>.99</span></span>
+                        <span class="price-old">$159.99</span>
+                        <span class="price-badge">SAVE 19%</span>
+                    </div>
+
+                    <p class="product-desc">
+                        The Nexus MX Pro is built for serious gamers who demand precision. Featuring custom mechanical
+                        switches, per-key RGB lighting, and an aerospace-grade aluminum frame — this is the last
+                        keyboard you'll ever need.
+                    </p>
+
+                    <div class="product-divider"></div>
+
+                    <div class="product-quantity">
+                        <p class="product-option-label">Quantity</p>
+                        <div class="qty-selector">
+                            <button class="qty-btn" id="qtyMinus">−</button>
+                            <span class="qty-value" id="qtyValue">1</span>
+                            <button class="qty-btn" id="qtyPlus">+</button>
+                        </div>
+                    </div>
+
+                    <div class="product-actions">
+                        <button class="btn-primary product-cart-btn">
+                            <i class="fas fa-shopping-bag"></i>
+                            Add to Cart
+                        </button>
+                        <button class="product-wishlist-btn">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="product-divider"></div>
+
+                    <div class="product-accordion">
+
+                        <div class="accordion-item active">
+                            <button class="accordion-head">
+                                <span>Specifications</span>
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-body">
+                                <ul class="specs-list">
+                                    <li><span>Switch Type</span><span>Nexus Red Linear</span></li>
+                                    <li><span>Layout</span><span>Full Size (104 Keys)</span></li>
+                                    <li><span>Lighting</span><span>Per-Key RGB</span></li>
+                                    <li><span>Connection</span><span>USB-C / Wireless</span></li>
+                                    <li><span>Frame</span><span>Aerospace Aluminum</span></li>
+                                    <li><span>Polling Rate</span><span>1000Hz</span></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <button class="accordion-head">
+                                <span>Shipping</span>
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-body">
+                                <p class="accordion-text">Free standard shipping on all orders over $50. Express
+                                    delivery available at checkout. Orders ship within 1-2 business days.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <button class="accordion-head">
+                                <span>Returns</span>
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-body">
+                                <p class="accordion-text">30-day hassle-free returns. If you're not satisfied, we'll
+                                    make it right. No questions asked.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section id="related-products">
+                <div class="related-header">
+                    <p class="section-tag">// You May Also Like</p>
+                    <h2 class="section-heading">RELATED <span>PRODUCTS</span></h2>
+                </div>
+                <div class="related-grid">
+
+                    <div class="prod-card" data-category="mouse">
+                        <div class="prod-img-wrapper">
+                            <img src="./Assets/Images/prod-2.jpg" alt="Gaming Mouse">
+                            <div class="prod-overlay"></div>
+                            <button class="prod-wishlist">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="prod-info">
+                            <span class="prod-tag">Mouse</span>
+                            <h3 class="prod-name">Nexus Viper Elite Mouse</h3>
+                            <div class="prod-bottom">
+                                <div class="prod-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span class="rating-count">(96)</span>
+                                </div>
+                                <p class="prod-price">$89<span>.99</span></p>
+                            </div>
+                            <button class="prod-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="prod-card" data-category="headset">
+                        <div class="prod-img-wrapper">
+                            <img src="./Assets/Images/prod-3.jpg" alt="Gaming Headset">
+                            <div class="prod-overlay"></div>
+                            <button class="prod-wishlist">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="prod-info">
+                            <span class="prod-tag">Headset</span>
+                            <h3 class="prod-name">Nexus Sound X1 Headset</h3>
+                            <div class="prod-bottom">
+                                <div class="prod-rating">
+                                    <span class="stars">★★★★☆</span>
+                                    <span class="rating-count">(74)</span>
+                                </div>
+                                <p class="prod-price">$149<span>.99</span></p>
+                            </div>
+                            <button class="prod-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="prod-card" data-category="monitor">
+                        <div class="prod-img-wrapper">
+                            <img src="./Assets/Images/prod-4.jpg" alt="Gaming Monitor">
+                            <div class="prod-overlay"></div>
+                            <button class="prod-wishlist">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="prod-info">
+                            <span class="prod-tag">Monitor</span>
+                            <h3 class="prod-name">Nexus Vision 27" Monitor</h3>
+                            <div class="prod-bottom">
+                                <div class="prod-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span class="rating-count">(52)</span>
+                                </div>
+                                <p class="prod-price">$399<span>.99</span></p>
+                            </div>
+                            <button class="prod-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="prod-card" data-category="keyboard">
+                        <div class="prod-img-wrapper">
+                            <img src="./Assets/Images/prod-6.jpg" alt="Mechanical Keyboard">
+                            <div class="prod-overlay"></div>
+                            <button class="prod-wishlist">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="prod-info">
+                            <span class="prod-tag">Keyboard</span>
+                            <h3 class="prod-name">Nexus TKL Mechanical</h3>
+                            <div class="prod-bottom">
+                                <div class="prod-rating">
+                                    <span class="stars">★★★★☆</span>
+                                    <span class="rating-count">(61)</span>
+                                </div>
+                                <p class="prod-price">$99<span>.99</span></p>
+                            </div>
+                            <button class="prod-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+
+        <footer id="footer">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">NEX<span>US</span></a>
+                    <p class="footer-tagline">Gear up. Dominate. Repeat.</p>
+                    <div class="footer-socials">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-col-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-col-heading">Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="shop.html">PC Builds</a></li>
+                        <li><a href="shop.html">Keyboards</a></li>
+                        <li><a href="shop.html">Mouse</a></li>
+                        <li><a href="shop.html">Consoles</a></li>
+                        <li><a href="shop.html">Monitors</a></li>
+                        <li><a href="shop.html">Headsets</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-col-heading">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="#">Track Order</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-newsletter">
+                    <h4 class="footer-col-heading">Newsletter</h4>
+                    <p class="footer-newsletter-text">Get exclusive deals and latest drops straight to your inbox.</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Your email address">
+                        <button class="newsletter-btn">
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copy">© 2024 NEXUS. All rights reserved.</p>
+                <p class="footer-credit">Designed & Built with <span>♥</span></p>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/sheryjs/dist/Shery.js"></script>
+    <script src="./Assets/js/main.js"></script>
+    <script src="./Assets/js/product.js"></script>
+
+</body>
+
+</html>

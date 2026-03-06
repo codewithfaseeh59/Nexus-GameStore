@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS — About</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./Assets/css/main.css">
+    <link rel="stylesheet" href="./Assets/css/component.css">
+    <link rel="stylesheet" href="./Assets/css/responsive.css">
+</head>
+
+<body>
+
+    <div id="loader">
+        <div class="loader-bg"></div>
+        <div class="loader-content">
+            <div class="loader-logo">
+                <span>N</span>
+                <span>E</span>
+                <span>X</span>
+                <span>U</span>
+                <span>S</span>
+            </div>
+            <div class="loader-tagline">GEAR UP. DOMINATE.</div>
+            <div class="loader-progress">
+                <div class="loader-progress-bar"></div>
+            </div>
+            <div class="loader-percent">0%</div>
+        </div>
+        <div class="loader-split-top"></div>
+        <div class="loader-split-bottom"></div>
+    </div>
+
+    <div id="wrapper">
+
+        <header id="header">
+            <nav id="navbar">
+                <a href="index.html" class="nav-logo">NEX<span>US</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <div class="nav-search">
+                        <input type="text" placeholder="Search products...">
+                        <button class="search-icon">
+                            <svg viewBox="0 0 24 24">
+                                <circle cx="11" cy="11" r="8" />
+                                <path d="m21 21-4.35-4.35" />
+                            </svg>
+                        </button>
+                    </div>
+                    <a href="cart.html" class="nav-cart">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                            <line x1="3" y1="6" x2="21" y2="6" />
+                            <path d="M16 10a4 4 0 0 1-8 0" />
+                        </svg>
+                        <span class="cart-count">0</span>
+                    </a>
+                    <button class="hamburger" id="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </nav>
+        </header>
+
+        <div class="mobile-overlay" id="mobileOverlay"></div>
+        <nav class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <main id="main">
+
+            <section id="about-banner">
+                <div class="shop-banner-bg">
+                    <img src="./Assets/Images/shop-banner.jpg" alt="" class="shop-banner-img">
+                    <div class="shop-banner-overlay"></div>
+                    <div class="shop-banner-glow"></div>
+                </div>
+                <div class="shop-banner-content">
+                    <p class="section-tag">// Who We Are</p>
+                    <h1 class="shop-banner-heading">ABOUT <span>NEXUS</span></h1>
+                    <div class="breadcrumb">
+                        <a href="index.html">Home</a>
+                        <span>/</span>
+                        <span class="breadcrumb-active">About</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="about-story">
+                <div class="story-img">
+                    <img src="./Assets/Images/about-story.jpg" alt="Our Story">
+                    <div class="story-img-glow"></div>
+                </div>
+                <div class="story-content">
+                    <p class="section-tag">// Our Story</p>
+                    <h2 class="section-heading">BORN FROM <span>PASSION</span></h2>
+                    <p class="story-text">
+                        NEXUS was founded in 2018 by a group of hardcore gamers who were tired of compromising on gear.
+                        We set out to build a store that curates only the best — no fluff, no filler, just pure
+                        performance.
+                    </p>
+                    <p class="story-text">
+                        From our first mechanical keyboard to our latest PC builds, every product in our lineup is
+                        tested, approved, and loved by our in-house team of gamers before it ever reaches your hands.
+                    </p>
+                    <div class="story-stats">
+                        <div class="story-stat">
+                            <h3>2018</h3>
+                            <p>Founded</p>
+                        </div>
+                        <div class="story-stat">
+                            <h3>50+</h3>
+                            <p>Team Members</p>
+                        </div>
+                        <div class="story-stat">
+                            <h3>30+</h3>
+                            <p>Countries</p>
+                        </div>
+                    </div>
+                    <a href="shop.html" class="btn-primary">Shop Now</a>
+                </div>
+            </section>
+
+
+            <section id="about-values">
+                <div class="values-header">
+                    <p class="section-tag">// What We Stand For</p>
+                    <h2 class="section-heading">OUR <span>VALUES</span></h2>
+                </div>
+                <div class="values-grid">
+
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3 class="value-name">Performance First</h3>
+                        <p class="value-text">Every product we stock is benchmarked and tested for peak performance. We
+                            don't compromise — ever.</p>
+                    </div>
+
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="value-name">Built to Last</h3>
+                        <p class="value-text">We only carry gear built with premium materials. Because your setup should
+                            outlast your rank climbs.</p>
+                    </div>
+
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3 class="value-name">Gamer Support</h3>
+                        <p class="value-text">Our support team are gamers too. We speak your language and we've got your
+                            back 24/7.</p>
+                    </div>
+
+                </div>
+            </section>
+
+
+            <section id="about-team">
+                <div class="team-header">
+                    <p class="section-tag">// The People Behind NEXUS</p>
+                    <h2 class="section-heading">MEET THE <span>TEAM</span></h2>
+                </div>
+                <div class="team-grid">
+
+                    <div class="team-card">
+                        <div class="team-img-wrapper">
+                            <img src="./Assets/Images/team-1.jpg" alt="Alex Carter">
+                            <div class="team-overlay"></div>
+                        </div>
+                        <div class="team-info">
+                            <h3 class="team-name">Alex Carter</h3>
+                            <p class="team-role">Founder & CEO</p>
+                            <div class="team-socials">
+                                <a href="#"><i class="fab fa-x-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="team-img-wrapper">
+                            <img src="./Assets/Images/team-2.jpg" alt="Sara Lee">
+                            <div class="team-overlay"></div>
+                        </div>
+                        <div class="team-info">
+                            <h3 class="team-name">Sara Lee</h3>
+                            <p class="team-role">Head of Product</p>
+                            <div class="team-socials">
+                                <a href="#"><i class="fab fa-x-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="team-img-wrapper">
+                            <img src="./Assets/Images/team-3.jpg" alt="Marcus Reid">
+                            <div class="team-overlay"></div>
+                        </div>
+                        <div class="team-info">
+                            <h3 class="team-name">Marcus Reid</h3>
+                            <p class="team-role">Lead Developer</p>
+                            <div class="team-socials">
+                                <a href="#"><i class="fab fa-x-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+
+            <section id="stats">
+                <div class="stats-wrapper">
+                    <div class="stat-item">
+                        <h3 class="stat-num"><span class="count" data-target="10000">0</span><span>+</span></h3>
+                        <p class="stat-label">Happy Customers</p>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <h3 class="stat-num"><span class="count" data-target="500">0</span><span>+</span></h3>
+                        <p class="stat-label">Products</p>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <h3 class="stat-num"><span class="count" data-target="4.9">0</span><span>★</span></h3>
+                        <p class="stat-label">Average Rating</p>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <h3 class="stat-num">Free<span>.</span></h3>
+                        <p class="stat-label">Worldwide Shipping</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer id="footer">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">NEX<span>US</span></a>
+                    <p class="footer-tagline">Gear up. Dominate. Repeat.</p>
+                    <div class="footer-socials">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-col-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-col-heading">Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="shop.html">PC Builds</a></li>
+                        <li><a href="shop.html">Keyboards</a></li>
+                        <li><a href="shop.html">Mouse</a></li>
+                        <li><a href="shop.html">Consoles</a></li>
+                        <li><a href="shop.html">Monitors</a></li>
+                        <li><a href="shop.html">Headsets</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-col-heading">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="#">Track Order</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-newsletter">
+                    <h4 class="footer-col-heading">Newsletter</h4>
+                    <p class="footer-newsletter-text">Get exclusive deals and latest drops straight to your inbox.</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Your email address">
+                        <button class="newsletter-btn">
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copy">© 2024 NEXUS. All rights reserved.</p>
+                <p class="footer-credit">Designed & Built with <span>♥</span></p>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/sheryjs/dist/Shery.js"></script>
+    <script src="./Assets/js/main.js"></script>
+
+</body>
+
+</html>

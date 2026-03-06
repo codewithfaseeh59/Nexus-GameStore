@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS — Gaming Store</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./Assets/css/main.css">
+    <link rel="stylesheet" href="./Assets/css/component.css">
+    <link rel="stylesheet" href="./Assets/css/responsive.css">
+</head>
+
+<body>
+
+    <div id="loader">
+        <div class="loader-bg"></div>
+        <div class="loader-content">
+            <div class="loader-logo">
+                <span>N</span>
+                <span>E</span>
+                <span>X</span>
+                <span>U</span>
+                <span>S</span>
+            </div>
+            <div class="loader-tagline">GEAR UP. DOMINATE.</div>
+            <div class="loader-progress">
+                <div class="loader-progress-bar"></div>
+            </div>
+            <div class="loader-percent">0%</div>
+        </div>
+        <div class="loader-split-top"></div>
+        <div class="loader-split-bottom"></div>
+    </div>
+
+    <div id="wrapper">
+
+        <header id="header">
+            <nav id="navbar">
+
+                <a href="index.html" class="nav-logo">NEX<span>US</span></a>
+
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <div class="nav-search">
+                        <input type="text" placeholder="Search products...">
+                        <button class="search-icon">
+                            <svg viewBox="0 0 24 24">
+                                <circle cx="11" cy="11" r="8" />
+                                <path d="m21 21-4.35-4.35" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <a href="cart.html" class="nav-cart">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                            <line x1="3" y1="6" x2="21" y2="6" />
+                            <path d="M16 10a4 4 0 0 1-8 0" />
+                        </svg>
+                        <span class="cart-count">0</span>
+                    </a>
+
+                    <button class="hamburger" id="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+
+            </nav>
+        </header>
+
+        <div class="mobile-overlay" id="mobileOverlay"></div>
+        <nav class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <main id="main">
+            <section id="hero">
+
+                <div class="hero-bg">
+                    <img src="./Assets/Images/hero-bg.jpg" alt="" class="hero-bg-img">
+                    <div class="hero-bg-overlay"></div>
+                    <div class="hero-bg-glow"></div>
+                </div>
+
+                <div class="hero-content">
+
+                    <p class="hero-tagline">// Next Gen Gaming Gear</p>
+
+                    <h1 class="hero-heading">
+                        GEAR UP.<br>
+                        <span>DOMINATE.</span>
+                    </h1>
+
+                    <p class="hero-sub">
+                        Premium gaming gear for the next level player.
+                    </p>
+
+                    <div class="hero-btns">
+                        <a href="shop.html" class="btn-primary">Shop Now</a>
+                        <a href="#featured" class="btn-ghost">Explore <span>→</span></a>
+                    </div>
+
+                    <div class="hero-visual">
+                        <div class="hero-shape">
+                            <div class="sphere"></div>
+                        </div>
+                        <div class="hero-img-wrapper">
+                            <img src="./Assets/Images/hero-product.jpg" alt="Gaming Keyboard">
+                            <div class="hero-img-glow"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="hero-scroll">
+                    <span class="scroll-line"></span>
+                    <p>Scroll</p>
+                </div>
+
+            </section>
+            <section id="stats">
+                <div class="stats-wrapper">
+                    <div class="stat-item">
+                        <h3 class="stat-num"><span class="count" data-target="10000">0</span> <span>+</span></h3>
+                        <p class="stat-label">Happy Customers</p>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <h3 class="stat-num"><span class="count" data-target="500">0</span> <span>+</span></h3>
+                        <p class="stat-label">Products</p>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <h3 class="stat-num"><span class="count" data-target="4.9">0</span> <span>★</span></h3>
+                        <p class="stat-label">Average Rating</p>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <h3 class="stat-num">Free<span>.</span></h3>
+                        <p class="stat-label">Worldwide Shipping</p>
+                    </div>
+                </div>
+            </section>
+            <section id="categories">
+
+                <div class="categories-header">
+                    <p class="section-tag">// Shop By Category</p>
+                    <h2 class="section-heading">BROWSE <span>CATEGORIES</span></h2>
+                </div>
+
+                <div class="categories-track-wrapper">
+                    <div class="categories-track">
+
+                        <div class="cat-card">
+                            <div class="cat-img-wrapper">
+                                <img src="./Assets/Images/cat-pc.jpg" alt="PC Builds">
+                                <div class="cat-overlay"></div>
+                            </div>
+                            <div class="cat-content">
+                                <p class="cat-num">01</p>
+                                <h3 class="cat-name">PC Builds</h3>
+                                <a href="shop.html" class="cat-link">Shop Now →</a>
+                            </div>
+                        </div>
+
+                        <div class="cat-card">
+                            <div class="cat-img-wrapper">
+                                <img src="./Assets/Images/cat-keyboard.jpg" alt="Keyboards">
+                                <div class="cat-overlay"></div>
+                            </div>
+                            <div class="cat-content">
+                                <p class="cat-num">02</p>
+                                <h3 class="cat-name">Keyboards</h3>
+                                <a href="shop.html" class="cat-link">Shop Now →</a>
+                            </div>
+                        </div>
+
+                        <div class="cat-card">
+                            <div class="cat-img-wrapper">
+                                <img src="./Assets/Images/cat-mouse.jpg" alt="Mouse">
+                                <div class="cat-overlay"></div>
+                            </div>
+                            <div class="cat-content">
+                                <p class="cat-num">03</p>
+                                <h3 class="cat-name">Mouse</h3>
+                                <a href="shop.html" class="cat-link">Shop Now →</a>
+                            </div>
+                        </div>
+
+                        <div class="cat-card">
+                            <div class="cat-img-wrapper">
+                                <img src="./Assets/Images/cat-ps5.jpg" alt="PS5">
+                                <div class="cat-overlay"></div>
+                            </div>
+                            <div class="cat-content">
+                                <p class="cat-num">04</p>
+                                <h3 class="cat-name">PlayStation 5</h3>
+                                <a href="shop.html" class="cat-link">Shop Now →</a>
+                            </div>
+                        </div>
+
+                        <div class="cat-card">
+                            <div class="cat-img-wrapper">
+                                <img src="./Assets/Images/cat-xbox.jpg" alt="Xbox">
+                                <div class="cat-overlay"></div>
+                            </div>
+                            <div class="cat-content">
+                                <p class="cat-num">05</p>
+                                <h3 class="cat-name">Xbox</h3>
+                                <a href="shop.html" class="cat-link">Shop Now →</a>
+                            </div>
+                        </div>
+
+                        <div class="cat-card">
+                            <div class="cat-img-wrapper">
+                                <img src="./Assets/Images/cat-monitor.jpg" alt="Monitors">
+                                <div class="cat-overlay"></div>
+                            </div>
+                            <div class="cat-content">
+                                <p class="cat-num">06</p>
+                                <h3 class="cat-name">Monitors</h3>
+                                <a href="shop.html" class="cat-link">Shop Now →</a>
+                            </div>
+                        </div>
+
+                        <div class="cat-card">
+                            <div class="cat-img-wrapper">
+                                <img src="./Assets/Images/cat-headset.jpg" alt="Headsets">
+                                <div class="cat-overlay"></div>
+                            </div>
+                            <div class="cat-content">
+                                <p class="cat-num">07</p>
+                                <h3 class="cat-name">Headsets</h3>
+                                <a href="shop.html" class="cat-link">Shop Now →</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+            <section id="featured-products">
+                <div class="fp-header">
+                    <div>
+                        <p class="section-tag">// Top Picks</p>
+                        <h2 class="section-heading">FEATURED <span>PRODUCTS</span></h2>
+                    </div>
+                    <a href="shop.html" class="btn-ghost">View All <span>→</span></a>
+                </div>
+                <div class="fp-filters">
+                    <button class="fp-filter active" data-filter="all">All</button>
+                    <button class="fp-filter" data-filter="pc">PC Builds</button>
+                    <button class="fp-filter" data-filter="keyboard">Keyboards</button>
+                    <button class="fp-filter" data-filter="mouse">Mouse</button>
+                    <button class="fp-filter" data-filter="console">Consoles</button>
+                    <button class="fp-filter" data-filter="monitor">Monitors</button>
+                    <button class="fp-filter" data-filter="headset">Headsets</button>
+                </div>
+                <div class="fp-grid">
+                    <div class="prod-card" data-category="keyboard">
+                        <div class="prod-img-wrapper">
+                            <img src="./Assets/Images/prod-1.jpg" alt="Gaming Keyboard">
+                            <div class="prod-overlay"></div>
+                            <button class="prod-wishlist">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="prod-info">
+                            <span class="prod-tag">Keyboard</span>
+                            <h3 class="prod-name">Nexus MX Pro Keyboard</h3>
+                            <div class="prod-bottom">
+                                <div class="prod-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span class="rating-count">(128)</span>
+                                </div>
+                                <p class="prod-price">$129<span>.99</span></p>
+                            </div>
+                            <button class="prod-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="prod-card" data-category="mouse">
+                        <div class="prod-img-wrapper">
+                            <img src="./Assets/Images/prod-2.jpg" alt="Gaming Mouse">
+                            <div class="prod-overlay"></div>
+                            <button class="prod-wishlist">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="prod-info">
+                            <span class="prod-tag">Mouse</span>
+                            <h3 class="prod-name">Nexus Viper Elite Mouse</h3>
+                            <div class="prod-bottom">
+                                <div class="prod-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span class="rating-count">(96)</span>
+                                </div>
+                                <p class="prod-price">$89<span>.99</span></p>
+                            </div>
+                            <button class="prod-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="prod-card" data-category="headset">
+                        <div class="prod-img-wrapper">
+                            <img src="./Assets/Images/prod-3.jpg" alt="Gaming Headset">
+                            <div class="prod-overlay"></div>
+                            <button class="prod-wishlist">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="prod-info">
+                            <span class="prod-tag">Headset</span>
+                            <h3 class="prod-name">Nexus Sound X1 Headset</h3>
+                            <div class="prod-bottom">
+                                <div class="prod-rating">
+                                    <span class="stars">★★★★☆</span>
+                                    <span class="rating-count">(74)</span>
+                                </div>
+                                <p class="prod-price">$149<span>.99</span></p>
+                            </div>
+                            <button class="prod-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="prod-card" data-category="monitor">
+                        <div class="prod-img-wrapper">
+                            <img src="./Assets/Images/prod-4.jpg" alt="Gaming Monitor">
+                            <div class="prod-overlay"></div>
+                            <button class="prod-wishlist">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="prod-info">
+                            <span class="prod-tag">Monitor</span>
+                            <h3 class="prod-name">Nexus Vision 27" Monitor</h3>
+                            <div class="prod-bottom">
+                                <div class="prod-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span class="rating-count">(52)</span>
+                                </div>
+                                <p class="prod-price">$399<span>.99</span></p>
+                            </div>
+                            <button class="prod-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="prod-card" data-category="pc">
+                        <div class="prod-img-wrapper">
+                            <img src="./Assets/Images/prod-5.jpg" alt="Gaming PC">
+                            <div class="prod-overlay"></div>
+                            <button class="prod-wishlist">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="prod-info">
+                            <span class="prod-tag">PC Build</span>
+                            <h3 class="prod-name">Nexus Titan RTX Build</h3>
+                            <div class="prod-bottom">
+                                <div class="prod-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span class="rating-count">(38)</span>
+                                </div>
+                                <p class="prod-price">$1,999<span>.99</span></p>
+                            </div>
+                            <button class="prod-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="prod-card" data-category="keyboard">
+                        <div class="prod-img-wrapper">
+                            <img src="./Assets/Images/prod-6.jpg" alt="Mechanical Keyboard">
+                            <div class="prod-overlay"></div>
+                            <button class="prod-wishlist">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="prod-info">
+                            <span class="prod-tag">Keyboard</span>
+                            <h3 class="prod-name">Nexus TKL Mechanical</h3>
+                            <div class="prod-bottom">
+                                <div class="prod-rating">
+                                    <span class="stars">★★★★☆</span>
+                                    <span class="rating-count">(61)</span>
+                                </div>
+                                <p class="prod-price">$99<span>.99</span></p>
+                            </div>
+                            <button class="prod-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="prod-card" data-category="console">
+                        <div class="prod-img-wrapper">
+                            <img src="./Assets/Images/prod-7.jpg" alt="PS5 Controller">
+                            <div class="prod-overlay"></div>
+                            <button class="prod-wishlist">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="prod-info">
+                            <span class="prod-tag">Console</span>
+                            <h3 class="prod-name">PS5 DualSense Controller</h3>
+                            <div class="prod-bottom">
+                                <div class="prod-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span class="rating-count">(210)</span>
+                                </div>
+                                <p class="prod-price">$69<span>.99</span></p>
+                            </div>
+                            <button class="prod-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="prod-card" data-category="console">
+                        <div class="prod-img-wrapper">
+                            <img src="./Assets/Images/prod-8.jpg" alt="Xbox Controller">
+                            <div class="prod-overlay"></div>
+                            <button class="prod-wishlist">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="prod-info">
+                            <span class="prod-tag">Console</span>
+                            <h3 class="prod-name">Xbox Series X Controller</h3>
+                            <div class="prod-bottom">
+                                <div class="prod-rating">
+                                    <span class="stars">★★★★☆</span>
+                                    <span class="rating-count">(185)</span>
+                                </div>
+                                <p class="prod-price">$59<span>.99</span></p>
+                            </div>
+                            <button class="prod-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="brand-promise">
+                <div class="bp-bg">
+                    <img src="./Assets/Images/brand-promise.jpg" alt="Brand Promise" class="bp-bg-img">
+                    <div class="bp-bg-overlay"></div>
+                    <div class="bp-bg-glow"></div>
+                </div>
+                <div class="bp-content">
+                    <p class="section-tag">// Our Promise</p>
+                    <h2 class="bp-heading">
+                        WE DON'T JUST<br>
+                        SELL GEAR.<br>
+                        WE FUEL<br>
+                        <span>LEGENDS.</span>
+                    </h2>
+                    <p class="bp-text">
+                        At NEXUS, every product is handpicked for performance, built for winners. Whether you're
+                        climbing ranks or building your dream setup — we've got your back.
+                    </p>
+                    <a href="about.html" class="btn-primary">Our Story</a>
+                </div>
+            </section>
+        </main>
+
+        <footer id="footer">
+
+            <div class="footer-top">
+
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">NEX<span>US</span></a>
+                    <p class="footer-tagline">Gear up. Dominate. Repeat.</p>
+                    <div class="footer-socials">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-col-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-col-heading">Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="shop.html">PC Builds</a></li>
+                        <li><a href="shop.html">Keyboards</a></li>
+                        <li><a href="shop.html">Mouse</a></li>
+                        <li><a href="shop.html">Consoles</a></li>
+                        <li><a href="shop.html">Monitors</a></li>
+                        <li><a href="shop.html">Headsets</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-col-heading">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="#">Track Order</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col footer-newsletter">
+                    <h4 class="footer-col-heading">Newsletter</h4>
+                    <p class="footer-newsletter-text">Get exclusive deals and latest drops straight to your inbox.</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Your email address">
+                        <button class="newsletter-btn">
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copy">© 2024 NEXUS. All rights reserved.</p>
+                <p class="footer-credit">Designed & Built with <span>♥</span></p>
+            </div>
+
+        </footer>
+
+
+    </div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/sheryjs/dist/Shery.js"></script>
+    <script src="./Assets/js/main.js"></script>
+
+</body>
+
+</html>
