@@ -6,8 +6,8 @@ A fully responsive, dark-themed gaming e-commerce website built with vanilla HTM
 
 ## 🔗 Links
 
-- **Live Preview:** [https://yourusername.github.io/nexus](https://yourusername.github.io/nexus)
-- **Repository:** [https://github.com/codewithfaseeh59/Nexus-GameStore.git](https://github.com/yourusername/nexus)
+- **Live Preview:** [https://yourusername.github.io/nexus]
+- **Repository:** [https://github.com/codewithfaseeh59/Nexus-GameStore]
 
 ---
 
