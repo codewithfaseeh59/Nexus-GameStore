@@ -15,8 +15,8 @@ A fully responsive, dark-themed gaming e-commerce website built with vanilla HTM
 
 ### 1. Clone Repository
 ```bash
-git clone https://github.com/yourusername/nexus.git
-cd nexus
+git clone https://github.com/codewithfaseeh59/Nexus-GameStore
+cd Nexs-GameStore
 ```
 
 ### 2. Run Locally
