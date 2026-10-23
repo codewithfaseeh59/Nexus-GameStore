@@ -16,7 +16,7 @@ A fully responsive, dark-themed gaming e-commerce website built with vanilla HTM
 ### 1. Clone Repository
 ```bash
 git clone https://github.com/codewithfaseeh59/Nexus-GameStore
-cd Nexs-GameStore
+cd Nexus-GameStore
 ```
 
 ### 2. Run Locally
@@ -40,17 +40,21 @@ nexus/
 ├── product.html
 ├── cart.html
 ├── about.html
+├── faq.html
+├── shipping.html
+├── returns.html
+├── track-order.html
 ├── contact.html
 ├── README.md
 │
 └── Assets/
       ├── css/
       │     ├── main.css
-      │     ├── component.css
       │     └── responsive.css
       │
       ├── js/
       │     ├── main.js
+      │     ├── store.js
       │     ├── shop.js
       │     ├── product.js
       │     └── cart.js
@@ -64,26 +68,27 @@ nexus/
       │           └── SpaceMono-Bold.ttf
       │
       └── Images/
-            ├── hero-bg.jpg
-            ├── hero-product.jpg
-            ├── brand-promise.jpg
-            ├── shop-banner.jpg
-            ├── about-story.jpg
-            ├── cat-pc.jpg
-            ├── cat-keyboard.jpg
-            ├── cat-mouse.jpg
-            ├── cat-ps5.jpg
-            ├── cat-xbox.jpg
-            ├── cat-monitor.jpg
-            ├── cat-headset.jpg
-            ├── prod-1.jpg → prod-12.jpg
-            ├── product-main.jpg
-            ├── product-thumb-1.jpg
-            ├── product-thumb-2.jpg
-            ├── product-thumb-3.jpg
-            ├── team-1.jpg
-            ├── team-2.jpg
-            └── team-3.jpg
+            ├── hero-bg.webp
+            ├── hero-product.webp
+            ├── brand-promise.webp
+            ├── shop-banner.webp
+            ├── about-story.webp
+            ├── cat-pc.webp
+            ├── cat-keyboard.webp
+            ├── cat-mouse.webp
+            ├── cat-ps5.webp
+            ├── cat-xbox.webp
+            ├── cat-monitor.webp
+            ├── cat-headset.webp
+            ├── prod-1.webp → prod-12.webp
+            ├── product-main.webp
+            ├── product-thumb-1.webp
+            ├── product-thumb-2.webp
+            ├── product-thumb-3.webp
+            ├── team-1.webp
+            ├── team-2.webp
+            ├── team-3.webp
+            └── og-image.jpg
 ```
 
 ---
@@ -95,9 +100,13 @@ nexus/
 | Home | `index.html` | Hero, Stats, Categories, Featured Products, Brand Promise |
 | Shop | `shop.html` | Full product listing with sidebar filters and sort |
 | Product | `product.html` | Single product detail with image gallery and accordion |
-| Cart | `cart.html` | Cart items, order summary, coupon code |
+| Cart | `cart.html` | Cart items from localStorage, quantity controls, order summary, coupon code |
 | About | `about.html` | Story, Values, Team, Stats |
 | Contact | `contact.html` | Contact form, info, Google Maps embed |
+| FAQ | `faq.html` | Frequently asked questions accordion |
+| Shipping Policy | `shipping.html` | Delivery times, costs and international shipping |
+| Return Policy | `returns.html` | 30-day return rules and refund steps |
+| Track Order | `track-order.html` | Demo order tracker with sample timeline |
 
 ---
 
@@ -157,20 +166,21 @@ font-size: clamp(4rem, 12vw, 10rem);
 <!-- SheryJS -->
 <script src="https://unpkg.com/sheryjs/dist/Shery.js"></script>
 
-<!-- Main JS — every page -->
-<script src="./Assets/js/main.js"></script>
+<!-- Main JS + shared cart module — every page -->
+<script defer src="./Assets/js/main.js"></script>
+<script defer src="./Assets/js/store.js"></script>
 ```
 
 ### Page Specific JS
 ```html
 <!-- shop.html only -->
-<script src="./Assets/js/shop.js"></script>
+<script defer src="./Assets/js/shop.js"></script>
 
 <!-- product.html only -->
-<script src="./Assets/js/product.js"></script>
+<script defer src="./Assets/js/product.js"></script>
 
 <!-- cart.html only -->
-<script src="./Assets/js/cart.js"></script>
+<script defer src="./Assets/js/cart.js"></script>
 ```
 
 ---
@@ -180,7 +190,7 @@ font-size: clamp(4rem, 12vw, 10rem);
 ### main.js — loads on every page
 | Function | Description |
 |----------|-------------|
-| `initLoader()` | Cinematic page loader with GSAP split animation |
+| `initLoader()` | Page loader (about 2s) that finishes as soon as hero images and fonts are ready; skipped with reduced motion |
 | `initLocoScroll()` | Locomotive Scroll + ScrollTrigger sync |
 | `initCursor()` | SheryJS custom cursor with skew |
 | `initMagnetic()` | SheryJS magnetic effect on buttons and logo |
@@ -192,15 +202,22 @@ font-size: clamp(4rem, 12vw, 10rem);
 | `initScrollReveals()` | GSAP scroll reveal for all sections |
 | `initHorizontalScroll()` | GSAP ScrollTrigger pinned horizontal scroll |
 | `initProductFilter()` | Featured products filter by category |
-| `initGlobalAddToCart()` | Add to cart from any page via localStorage |
-| `addToCart()` | Add/update item in localStorage cart |
-| `updateNavCount()` | Update navbar cart count badge |
+
+### store.js — loads on every page
+| Function | Description |
+|----------|-------------|
+| `NexusCart.add()` / `setQty()` / `remove()` | Read and write the localStorage cart |
+| `updateBadge()` | Sync the navbar cart counter on every page |
+| `initAddToCart()` | Delegated "Add to Cart" handler for every product card |
+| `initFaq()` | FAQ accordion |
+| `initTrackOrder()` | Demo order tracker form |
 
 ### shop.js — shop.html only
 | Function | Description |
 |----------|-------------|
 | `initPriceSlider()` | Price range slider filter |
 | `initCategoryFilter()` | Sidebar checkbox category filter |
+| `initRatingFilter()` | Minimum rating filter |
 | `initSort()` | Sort products by price/rating/latest |
 | `filterProducts()` | Combined filter logic |
 | `sortProducts()` | Re-order products with GSAP animation |
@@ -213,13 +230,23 @@ font-size: clamp(4rem, 12vw, 10rem);
 | `initImageGallery()` | Thumbnail click to swap main image |
 | `initQuantity()` | Quantity selector +/- |
 | `initWishlist()` | Wishlist toggle button |
-| `initAddToCart()` | Add to cart with localStorage |
+| `initAddToCart()` | Add the product (with chosen quantity) to the shared cart |
 | `initAccordion()` | Specs/Shipping/Returns accordion |
 | `initProductReveal()` | Scroll reveal animations |
 
 ### cart.js — cart.html only
 | Function | Description |
 |----------|-------------|
+| `renderCart()` | Render cart items from localStorage |
+| `updateSummary()` | Recalculate subtotal, tax, total |
+| `changeQuantity()` | Per-item quantity +/- |
+| `removeRow()` | Remove item with GSAP animation |
+| `showEmptyCart()` | Show empty state when cart is cleared |
+| `initCheckout()` | Demo checkout message (no payment is processed) |
+| `initCoupon()` | Coupon code validation (NEXUS10) |
+| `initCartReveal()` | Reveal animations |
+
+----------|-------------|
 | `getCart()` | Get cart from localStorage |
 | `saveCart()` | Save cart to localStorage |
 | `renderCart()` | Render cart items dynamically |
@@ -235,15 +262,16 @@ font-size: clamp(4rem, 12vw, 10rem);
 
 ## 🔄 Cart System
 
-Cart data is stored in `localStorage` under the key `nexus-cart`.
+Cart data is stored in `localStorage` under the key `nexus_cart`, shared by every page.
 
 ### Cart Item Structure
 ```json
 {
+  "id": "nexus-mx-pro-keyboard",
   "name": "Nexus MX Pro Keyboard",
-  "category": "Keyboard",
+  "tag": "Keyboard",
   "price": 129.99,
-  "image": "Assets/Images/prod-1.jpg",
+  "img": "./Assets/Images/prod-1.webp",
   "qty": 1
 }
 ```

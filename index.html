@@ -4,14 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEXUS — Gaming Store</title>
+    <title>NEXUS — Premium Gaming Gear Store</title>
+    <meta name="description" content="Shop premium gaming keyboards, mice, headsets, monitors, consoles and custom PC builds at NEXUS. Fast, free worldwide shipping on every order.">
+    <meta name="theme-color" content="#050508">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NEXUS">
+    <meta property="og:title" content="NEXUS — Premium Gaming Gear Store">
+    <meta property="og:description" content="Shop premium gaming keyboards, mice, headsets, monitors, consoles and custom PC builds at NEXUS. Fast, free worldwide shipping on every order.">
+    <meta property="og:image" content="Assets/Images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NEXUS — Premium Gaming Gear Store">
+    <meta name="twitter:description" content="Shop premium gaming keyboards, mice, headsets, monitors, consoles and custom PC builds at NEXUS. Fast, free worldwide shipping on every order.">
+    <meta name="twitter:image" content="Assets/Images/og-image.jpg">
+    <link rel="preload" as="image" href="./Assets/Images/hero-product.webp" type="image/webp" fetchpriority="high">
+    <link rel="preload" as="image" href="./Assets/Images/hero-bg.webp" type="image/webp">
+    <link rel="preload" as="font" href="./Assets/Fonts/SpaceMono/SpaceMono-Regular.ttf" type="font/ttf" crossorigin>
+    <link rel="preload" as="font" href="./Assets/Fonts/Barlow/BarlowCondensed-Regular.ttf" type="font/ttf" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        crossorigin="anonymous" referrerpolicy="no-referrer" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" /></noscript>
     <link rel="stylesheet" href="./Assets/css/main.css">
-    <link rel="stylesheet" href="./Assets/css/component.css">
     <link rel="stylesheet" href="./Assets/css/responsive.css">
 </head>
 
@@ -53,8 +71,8 @@
 
                 <div class="nav-actions">
                     <div class="nav-search">
-                        <input type="text" placeholder="Search products...">
-                        <button class="search-icon">
+                        <input type="text" placeholder="Search products..." aria-label="Search products">
+                        <button class="search-icon" aria-label="Toggle search">
                             <svg viewBox="0 0 24 24">
                                 <circle cx="11" cy="11" r="8" />
                                 <path d="m21 21-4.35-4.35" />
@@ -71,7 +89,7 @@
                         <span class="cart-count">0</span>
                     </a>
 
-                    <button class="hamburger" id="hamburger">
+                    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -95,7 +113,7 @@
             <section id="hero">
 
                 <div class="hero-bg">
-                    <img src="./Assets/Images/hero-bg.jpg" alt="" class="hero-bg-img">
+                    <img alt="" aria-hidden="true" width="1920" height="1280" src="./Assets/Images/hero-bg.webp" class="hero-bg-img">
                     <div class="hero-bg-overlay"></div>
                     <div class="hero-bg-glow"></div>
                 </div>
@@ -123,7 +141,7 @@
                             <div class="sphere"></div>
                         </div>
                         <div class="hero-img-wrapper">
-                            <img src="./Assets/Images/hero-product.jpg" alt="Gaming Keyboard">
+                            <img alt="Nexus gaming keyboard glowing with purple backlight" width="720" height="480" fetchpriority="high" src="./Assets/Images/hero-product.webp">
                             <div class="hero-img-glow"></div>
                         </div>
                     </div>
@@ -139,25 +157,26 @@
             <section id="stats">
                 <div class="stats-wrapper">
                     <div class="stat-item">
-                        <h3 class="stat-num"><span class="count" data-target="10000">0</span> <span>+</span></h3>
+                        <h2 class="stat-num"><span class="count" data-target="1500">0</span> <span>+</span></h2>
                         <p class="stat-label">Happy Customers</p>
                     </div>
                     <div class="stat-divider"></div>
                     <div class="stat-item">
-                        <h3 class="stat-num"><span class="count" data-target="500">0</span> <span>+</span></h3>
+                        <h2 class="stat-num"><span class="count" data-target="12">0</span> <span>+</span></h2>
                         <p class="stat-label">Products</p>
                     </div>
                     <div class="stat-divider"></div>
                     <div class="stat-item">
-                        <h3 class="stat-num"><span class="count" data-target="4.9">0</span> <span>★</span></h3>
+                        <h2 class="stat-num"><span class="count" data-target="4.6">0</span> <span>★</span></h2>
                         <p class="stat-label">Average Rating</p>
                     </div>
                     <div class="stat-divider"></div>
                     <div class="stat-item">
-                        <h3 class="stat-num">Free<span>.</span></h3>
+                        <h2 class="stat-num">Free<span>.</span></h2>
                         <p class="stat-label">Worldwide Shipping</p>
                     </div>
                 </div>
+                <p class="stats-note">Sample figures for demonstration purposes.</p>
             </section>
             <section id="categories">
 
@@ -171,7 +190,7 @@
 
                         <div class="cat-card">
                             <div class="cat-img-wrapper">
-                                <img src="./Assets/Images/cat-pc.jpg" alt="PC Builds">
+                                <img alt="Custom gaming PC build with red RGB lighting" width="800" height="533" loading="lazy" decoding="async" src="./Assets/Images/cat-pc.webp">
                                 <div class="cat-overlay"></div>
                             </div>
                             <div class="cat-content">
@@ -183,7 +202,7 @@
 
                         <div class="cat-card">
                             <div class="cat-img-wrapper">
-                                <img src="./Assets/Images/cat-keyboard.jpg" alt="Keyboards">
+                                <img alt="Mechanical gaming keyboard with backlit keys" width="800" height="533" loading="lazy" decoding="async" src="./Assets/Images/cat-keyboard.webp">
                                 <div class="cat-overlay"></div>
                             </div>
                             <div class="cat-content">
@@ -195,7 +214,7 @@
 
                         <div class="cat-card">
                             <div class="cat-img-wrapper">
-                                <img src="./Assets/Images/cat-mouse.jpg" alt="Mouse">
+                                <img alt="Gaming mouse on a dark desk" width="800" height="533" loading="lazy" decoding="async" src="./Assets/Images/cat-mouse.webp">
                                 <div class="cat-overlay"></div>
                             </div>
                             <div class="cat-content">
@@ -207,31 +226,31 @@
 
                         <div class="cat-card">
                             <div class="cat-img-wrapper">
-                                <img src="./Assets/Images/cat-ps5.jpg" alt="PS5">
+                                <img alt="Red pro console controller" width="800" height="533" loading="lazy" decoding="async" src="./Assets/Images/cat-ps5.webp">
                                 <div class="cat-overlay"></div>
                             </div>
                             <div class="cat-content">
                                 <p class="cat-num">04</p>
-                                <h3 class="cat-name">PlayStation 5</h3>
+                                <h3 class="cat-name">Console Gear</h3>
                                 <a href="shop.html" class="cat-link">Shop Now →</a>
                             </div>
                         </div>
 
                         <div class="cat-card">
                             <div class="cat-img-wrapper">
-                                <img src="./Assets/Images/cat-xbox.jpg" alt="Xbox">
+                                <img alt="Black wireless console controller" width="800" height="533" loading="lazy" decoding="async" src="./Assets/Images/cat-xbox.webp">
                                 <div class="cat-overlay"></div>
                             </div>
                             <div class="cat-content">
                                 <p class="cat-num">05</p>
-                                <h3 class="cat-name">Xbox</h3>
+                                <h3 class="cat-name">Controllers</h3>
                                 <a href="shop.html" class="cat-link">Shop Now →</a>
                             </div>
                         </div>
 
                         <div class="cat-card">
                             <div class="cat-img-wrapper">
-                                <img src="./Assets/Images/cat-monitor.jpg" alt="Monitors">
+                                <img alt="Gaming monitor on a desk setup" width="800" height="533" loading="lazy" decoding="async" src="./Assets/Images/cat-monitor.webp">
                                 <div class="cat-overlay"></div>
                             </div>
                             <div class="cat-content">
@@ -243,7 +262,7 @@
 
                         <div class="cat-card">
                             <div class="cat-img-wrapper">
-                                <img src="./Assets/Images/cat-headset.jpg" alt="Headsets">
+                                <img alt="Gaming headset" width="800" height="533" loading="lazy" decoding="async" src="./Assets/Images/cat-headset.webp">
                                 <div class="cat-overlay"></div>
                             </div>
                             <div class="cat-content">
@@ -277,9 +296,9 @@
                 <div class="fp-grid">
                     <div class="prod-card" data-category="keyboard">
                         <div class="prod-img-wrapper">
-                            <img src="./Assets/Images/prod-1.jpg" alt="Gaming Keyboard">
+                            <img alt="Nexus MX Pro RGB gaming keyboard" width="800" height="533" loading="lazy" decoding="async" src="./Assets/Images/prod-1.webp">
                             <div class="prod-overlay"></div>
-                            <button class="prod-wishlist">
+                            <button class="prod-wishlist" aria-label="Add to wishlist">
                                 <svg viewBox="0 0 24 24">
                                     <path
                                         d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
@@ -301,9 +320,9 @@
                     </div>
                     <div class="prod-card" data-category="mouse">
                         <div class="prod-img-wrapper">
-                            <img src="./Assets/Images/prod-2.jpg" alt="Gaming Mouse">
+                            <img alt="Nexus Viper Elite gaming mouse" width="800" height="461" loading="lazy" decoding="async" src="./Assets/Images/prod-2.webp">
                             <div class="prod-overlay"></div>
-                            <button class="prod-wishlist">
+                            <button class="prod-wishlist" aria-label="Add to wishlist">
                                 <svg viewBox="0 0 24 24">
                                     <path
                                         d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
@@ -325,9 +344,9 @@
                     </div>
                     <div class="prod-card" data-category="headset">
                         <div class="prod-img-wrapper">
-                            <img src="./Assets/Images/prod-3.jpg" alt="Gaming Headset">
+                            <img alt="Nexus Sound X1 gaming headset" width="800" height="533" loading="lazy" decoding="async" src="./Assets/Images/prod-3.webp">
                             <div class="prod-overlay"></div>
-                            <button class="prod-wishlist">
+                            <button class="prod-wishlist" aria-label="Add to wishlist">
                                 <svg viewBox="0 0 24 24">
                                     <path
                                         d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
@@ -349,9 +368,9 @@
                     </div>
                     <div class="prod-card" data-category="monitor">
                         <div class="prod-img-wrapper">
-                            <img src="./Assets/Images/prod-4.jpg" alt="Gaming Monitor">
+                            <img alt="Nexus Vision 27-inch gaming monitor" width="800" height="533" loading="lazy" decoding="async" src="./Assets/Images/prod-4.webp">
                             <div class="prod-overlay"></div>
-                            <button class="prod-wishlist">
+                            <button class="prod-wishlist" aria-label="Add to wishlist">
                                 <svg viewBox="0 0 24 24">
                                     <path
                                         d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
@@ -373,9 +392,9 @@
                     </div>
                     <div class="prod-card" data-category="pc">
                         <div class="prod-img-wrapper">
-                            <img src="./Assets/Images/prod-5.jpg" alt="Gaming PC">
+                            <img alt="Nexus Titan RTX gaming PC with liquid cooling" width="800" height="771" loading="lazy" decoding="async" src="./Assets/Images/prod-5.webp">
                             <div class="prod-overlay"></div>
-                            <button class="prod-wishlist">
+                            <button class="prod-wishlist" aria-label="Add to wishlist">
                                 <svg viewBox="0 0 24 24">
                                     <path
                                         d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
@@ -397,9 +416,9 @@
                     </div>
                     <div class="prod-card" data-category="keyboard">
                         <div class="prod-img-wrapper">
-                            <img src="./Assets/Images/prod-6.jpg" alt="Mechanical Keyboard">
+                            <img alt="Nexus TKL mechanical keyboard" width="800" height="533" loading="lazy" decoding="async" src="./Assets/Images/prod-6.webp">
                             <div class="prod-overlay"></div>
-                            <button class="prod-wishlist">
+                            <button class="prod-wishlist" aria-label="Add to wishlist">
                                 <svg viewBox="0 0 24 24">
                                     <path
                                         d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
@@ -421,9 +440,9 @@
                     </div>
                     <div class="prod-card" data-category="console">
                         <div class="prod-img-wrapper">
-                            <img src="./Assets/Images/prod-7.jpg" alt="PS5 Controller">
+                            <img alt="Red pro console controller" width="800" height="533" loading="lazy" decoding="async" src="./Assets/Images/prod-7.webp">
                             <div class="prod-overlay"></div>
-                            <button class="prod-wishlist">
+                            <button class="prod-wishlist" aria-label="Add to wishlist">
                                 <svg viewBox="0 0 24 24">
                                     <path
                                         d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
@@ -432,7 +451,7 @@
                         </div>
                         <div class="prod-info">
                             <span class="prod-tag">Console</span>
-                            <h3 class="prod-name">PS5 DualSense Controller</h3>
+                            <h3 class="prod-name">Pro Console Controller</h3>
                             <div class="prod-bottom">
                                 <div class="prod-rating">
                                     <span class="stars">★★★★★</span>
@@ -445,9 +464,9 @@
                     </div>
                     <div class="prod-card" data-category="console">
                         <div class="prod-img-wrapper">
-                            <img src="./Assets/Images/prod-8.jpg" alt="Xbox Controller">
+                            <img alt="Black elite console controller" width="800" height="533" loading="lazy" decoding="async" src="./Assets/Images/prod-8.webp">
                             <div class="prod-overlay"></div>
-                            <button class="prod-wishlist">
+                            <button class="prod-wishlist" aria-label="Add to wishlist">
                                 <svg viewBox="0 0 24 24">
                                     <path
                                         d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
@@ -456,7 +475,7 @@
                         </div>
                         <div class="prod-info">
                             <span class="prod-tag">Console</span>
-                            <h3 class="prod-name">Xbox Series X Controller</h3>
+                            <h3 class="prod-name">Elite Console Controller</h3>
                             <div class="prod-bottom">
                                 <div class="prod-rating">
                                     <span class="stars">★★★★☆</span>
@@ -471,7 +490,7 @@
             </section>
             <section id="brand-promise">
                 <div class="bp-bg">
-                    <img src="./Assets/Images/brand-promise.jpg" alt="Brand Promise" class="bp-bg-img">
+                    <img alt="" aria-hidden="true" width="1600" height="1129" loading="lazy" decoding="async" src="./Assets/Images/brand-promise.webp" class="bp-bg-img">
                     <div class="bp-bg-overlay"></div>
                     <div class="bp-bg-glow"></div>
                 </div>
@@ -500,16 +519,12 @@
                     <a href="index.html" class="footer-logo">NEX<span>US</span></a>
                     <p class="footer-tagline">Gear up. Dominate. Repeat.</p>
                     <div class="footer-socials">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-x-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-discord"></i></a>
+                        <a href="https://github.com/codewithfaseehh59" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="NEXUS developer on GitHub"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
 
                 <div class="footer-col">
-                    <h4 class="footer-col-heading">Quick Links</h4>
+                    <h2 class="footer-col-heading">Quick Links</h2>
                     <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="shop.html">Shop</a></li>
@@ -519,7 +534,7 @@
                 </div>
 
                 <div class="footer-col">
-                    <h4 class="footer-col-heading">Categories</h4>
+                    <h2 class="footer-col-heading">Categories</h2>
                     <ul class="footer-links">
                         <li><a href="shop.html">PC Builds</a></li>
                         <li><a href="shop.html">Keyboards</a></li>
@@ -531,22 +546,22 @@
                 </div>
 
                 <div class="footer-col">
-                    <h4 class="footer-col-heading">Support</h4>
+                    <h2 class="footer-col-heading">Support</h2>
                     <ul class="footer-links">
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Shipping Policy</a></li>
-                        <li><a href="#">Return Policy</a></li>
-                        <li><a href="#">Track Order</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="shipping.html">Shipping Policy</a></li>
+                        <li><a href="returns.html">Return Policy</a></li>
+                        <li><a href="track-order.html">Track Order</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col footer-newsletter">
-                    <h4 class="footer-col-heading">Newsletter</h4>
+                    <h2 class="footer-col-heading">Newsletter</h2>
                     <p class="footer-newsletter-text">Get exclusive deals and latest drops straight to your inbox.</p>
                     <div class="newsletter-form">
-                        <input type="email" placeholder="Your email address">
-                        <button class="newsletter-btn">
+                        <input type="email" placeholder="Your email address" aria-label="Email address">
+                        <button class="newsletter-btn" aria-label="Subscribe to newsletter">
                             <i class="fas fa-arrow-right"></i>
                         </button>
                     </div>
@@ -555,7 +570,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p class="footer-copy">© 2024 NEXUS. All rights reserved.</p>
+                <p class="footer-copy">© 2026 NEXUS. All rights reserved.</p>
                 <p class="footer-credit">Designed & Built with <span>♥</span></p>
             </div>
 
@@ -568,11 +583,11 @@
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script type="text/javascript" src="https://unpkg.com/sheryjs/dist/Shery.js"></script>
-    <script src="./Assets/js/main.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script defer src="./Assets/js/main.js"></script>
+    <script defer src="./Assets/js/store.js"></script>
 
 </body>
 

@@ -1,3 +1,8 @@
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const useCustomCursor = !reduceMotion && !window.matchMedia("(hover: none)").matches;
+
+if (!useCustomCursor) document.documentElement.classList.add("native-cursor");
+
 
 function initLocoScroll() {
   const locoScroll = new LocomotiveScroll({
@@ -33,18 +38,45 @@ function initLocoScroll() {
   return locoScroll;
 }
 
-function initCursor() {
-  Shery.mouseFollower({
-    skewAmount: 5,
-    ease: "cubic-bezier(0.23, 1, 0.32, 1)",
-    duration: 1,
+const SHERY_VERSION = "1.0.0-beta.0.1.8";
+
+function loadShery() {
+  return new Promise(resolve => {
+    const base = "https://unpkg.com/sheryjs@" + SHERY_VERSION + "/dist/Shery";
+
+    const style = document.createElement("link");
+    style.rel = "stylesheet";
+    style.href = base + ".css";
+    // Must precede the site stylesheets so main.css keeps overriding its global rules
+    document.head.insertBefore(style, document.head.querySelector("link[rel=stylesheet]"));
+
+    const script = document.createElement("script");
+    script.src = base + ".js";
+    script.onload = () => resolve(true);
+    script.onerror = () => resolve(false);
+    document.head.appendChild(script);
   });
 }
 
-function initMagnetic() {
-  Shery.makeMagnet(".btn-primary, .btn-ghost, .nav-logo, .nav-cart", {
-    ease: "cubic-bezier(0.23, 1, 0.32, 1)",
-    duration: 1,
+function initCursorEffects() {
+  if (!useCustomCursor) return;
+
+  loadShery().then(loaded => {
+    if (!loaded) {
+      document.documentElement.classList.add("native-cursor");
+      return;
+    }
+
+    Shery.mouseFollower({
+      skewAmount: 5,
+      ease: "cubic-bezier(0.23, 1, 0.32, 1)",
+      duration: 1,
+    });
+
+    Shery.makeMagnet(".btn-primary, .btn-ghost, .nav-logo, .nav-cart", {
+      ease: "cubic-bezier(0.23, 1, 0.32, 1)",
+      duration: 1,
+    });
   });
 }
 
@@ -102,6 +134,8 @@ function initMobileMenu() {
 
   const openMenu = () => {
     hamburger.classList.add("open");
+    hamburger.setAttribute("aria-expanded", "true");
+    hamburger.setAttribute("aria-label", "Close menu");
     mobileMenu.classList.add("open");
     mobileOverlay.classList.add("open");
     document.body.style.overflow = "hidden";
@@ -109,6 +143,8 @@ function initMobileMenu() {
 
   const closeMenu = () => {
     hamburger.classList.remove("open");
+    hamburger.setAttribute("aria-expanded", "false");
+    hamburger.setAttribute("aria-label", "Open menu");
     mobileMenu.classList.remove("open");
     mobileOverlay.classList.remove("open");
     document.body.style.overflow = "";
@@ -122,6 +158,7 @@ function initMobileMenu() {
 }
 
 function initHeroAnimations() {
+  if (reduceMotion) return;
   const heroElements = [
     ".hero-tagline",
     ".hero-heading",
@@ -170,6 +207,14 @@ function initStatsCounter() {
   const counts = document.querySelectorAll(".count");
   if (!counts.length) return;
 
+  if (reduceMotion) {
+    counts.forEach(count => {
+      const target = parseFloat(count.getAttribute("data-target"));
+      count.innerText = target % 1 !== 0 ? target.toFixed(1) : target.toLocaleString();
+    });
+    return;
+  }
+
   counts.forEach(count => {
     const target = parseFloat(count.getAttribute("data-target"));
     const isDecimal = target % 1 !== 0;
@@ -197,6 +242,7 @@ function initStatsCounter() {
 }
 
 function initScrollReveals() {
+  if (reduceMotion) return;
   const revealElements = [
     { selector: "#stats .stat-item", stagger: 0.15 },
     { selector: ".categories-header", stagger: 0 },
@@ -243,7 +289,7 @@ function initHorizontalScroll() {
       start: "top top",
       end: () => `+=${Math.abs(getScrollAmount())}`,
       pin: true,
-      scrub: 1,
+      scrub: reduceMotion ? true : 1,
       invalidateOnRefresh: true,
     }
   });
@@ -270,7 +316,7 @@ function initProductFilter(locoScroll) {
           gsap.to(card, {
             opacity: 1,
             scale: 1,
-            duration: 0.4,
+            duration: reduceMotion ? 0 : 0.4,
             ease: "power2.out",
             display: "block"
           });
@@ -278,7 +324,7 @@ function initProductFilter(locoScroll) {
           gsap.to(card, {
             opacity: 0,
             scale: 0.95,
-            duration: 0.3,
+            duration: reduceMotion ? 0 : 0.3,
             ease: "power2.in",
             display: "none"
           });
@@ -294,6 +340,23 @@ function initProductFilter(locoScroll) {
 }
 
 
+function waitForCriticalAssets(maxWait) {
+  const criticalImages = Array.from(
+    document.querySelectorAll("#hero img, .shop-banner-img, .product-main-img img")
+  ).filter(img => img.loading !== "lazy" && !img.complete);
+
+  const imagesReady = Promise.all(
+    criticalImages.map(img => new Promise(resolve => {
+      img.addEventListener("load", resolve, { once: true });
+      img.addEventListener("error", resolve, { once: true });
+    }))
+  );
+  const fontsReady = document.fonts ? document.fonts.ready : Promise.resolve();
+  const timeout = new Promise(resolve => setTimeout(resolve, maxWait));
+
+  return Promise.race([Promise.all([imagesReady, fontsReady]), timeout]);
+}
+
 function initLoader(onComplete) {
   const loader = document.getElementById("loader");
   if (!loader) {
@@ -301,84 +364,79 @@ function initLoader(onComplete) {
     return;
   }
 
-  const letters = document.querySelectorAll(".loader-logo span");
-  const tagline = document.querySelector(".loader-tagline");
-  const progress = document.querySelector(".loader-progress");
+  if (reduceMotion) {
+    loader.style.display = "none";
+    onComplete();
+    return;
+  }
+
   const progressBar = document.querySelector(".loader-progress-bar");
   const percent = document.querySelector(".loader-percent");
   const splitTop = document.querySelector(".loader-split-top");
   const splitBottom = document.querySelector(".loader-split-bottom");
 
-  const tl = gsap.timeline();
+  let assetsReady = false;
+  waitForCriticalAssets(1200).then(() => { assetsReady = true; });
 
-  tl.to(letters, {
-    y: 0,
-    opacity: 1,
-    duration: 0.8,
-    ease: "power4.out",
-    stagger: 0.08,
-  })
-
-    .to([tagline, progress, percent], {
-      opacity: 1,
-      y: 0,
-      duration: 0.5,
-      ease: "power3.out",
-      stagger: 0.1,
-    }, "-=0.3")
-
-    .to(progressBar, {
-      width: "100%",
-      duration: 1.8,
-      ease: "power1.inOut",
-      onUpdate: function () {
-        const p = Math.round(this.progress() * 100);
-        if (percent) percent.textContent = p + "%";
-        if (progressBar) progressBar.style.width = p + "%";
-      }
-    }, "-=0.2")
-
-    .to(".loader-content", {
-      opacity: 0,
-      scale: 1.05,
-      duration: 0.5,
-      ease: "power2.in",
-    }, "+=0.2")
-
-    .to(splitTop, {
-      translateY: "0%",
-      duration: 0.6,
-      ease: "power4.inOut",
-    }, "-=0.2")
-    .to(splitBottom, {
-      translateY: "0%",
-      duration: 0.6,
-      ease: "power4.inOut",
-    }, "<")
-
-    .to(splitTop, {
-      translateY: "-100%",
-      duration: 0.7,
-      ease: "power4.inOut",
-    }, "+=0.1")
-    .to(splitBottom, {
-      translateY: "100%",
-      duration: 0.7,
-      ease: "power4.inOut",
-    }, "<")
-
-    .call(() => {
+  const finish = () => {
+    gsap.timeline({ onComplete: () => {
       loader.style.display = "none";
       onComplete();
+    } })
+      .to(".loader-content", {
+        opacity: 0,
+        duration: 0.2,
+        ease: "power2.in",
+      })
+      .to(splitTop, { translateY: "0%", duration: 0.3, ease: "power4.inOut" }, "-=0.1")
+      .to(splitBottom, { translateY: "0%", duration: 0.3, ease: "power4.inOut" }, "<")
+      .to(splitTop, { translateY: "-100%", duration: 0.4, ease: "power4.inOut" })
+      .to(splitBottom, { translateY: "100%", duration: 0.4, ease: "power4.inOut" }, "<");
+  };
+
+  const state = { value: 0 };
+  const setProgress = () => {
+    const p = Math.round(state.value * 100);
+    progressBar.style.transform = "scaleX(" + state.value + ")";
+    percent.textContent = p + "%";
+  };
+
+  gsap.timeline()
+    .to(state, {
+      value: 0.9,
+      duration: 0.6,
+      ease: "power1.out",
+      onUpdate: setProgress,
+    })
+    .add(() => {
+      const complete = () => {
+        gsap.to(state, {
+          value: 1,
+          duration: 0.15,
+          ease: "none",
+          onUpdate: setProgress,
+          onComplete: finish,
+        });
+      };
+      if (assetsReady) {
+        complete();
+      } else {
+        waitForCriticalAssets(300).then(complete);
+      }
     });
 }
 
 
 function init() {
+  if (!window.gsap || !window.ScrollTrigger || !window.LocomotiveScroll) {
+    const loader = document.getElementById("loader");
+    if (loader) loader.style.display = "none";
+    return;
+  }
+
   initLoader(() => {
     const locoScroll = initLocoScroll();
-    initCursor();
-    initMagnetic();
+    initCursorEffects();
     initNavbar(locoScroll);
     initSearch();
     initMobileMenu();
@@ -387,7 +445,6 @@ function init() {
     initScrollReveals();
     initHorizontalScroll();
     initProductFilter(locoScroll);
-    initGlobalAddToCart();
   });
 }
 

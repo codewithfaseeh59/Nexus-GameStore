@@ -4,14 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEXUS — About</title>
+    <title>About Us — NEXUS Gaming Store</title>
+    <meta name="description" content="Meet the NEXUS team. We handpick gaming gear for performance and build setups for players climbing the ranks, from first-time builders to pro competitors.">
+    <meta name="theme-color" content="#050508">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NEXUS">
+    <meta property="og:title" content="About Us — NEXUS Gaming Store">
+    <meta property="og:description" content="Meet the NEXUS team. We handpick gaming gear for performance and build setups for players climbing the ranks, from first-time builders to pro competitors.">
+    <meta property="og:image" content="Assets/Images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About Us — NEXUS Gaming Store">
+    <meta name="twitter:description" content="Meet the NEXUS team. We handpick gaming gear for performance and build setups for players climbing the ranks, from first-time builders to pro competitors.">
+    <meta name="twitter:image" content="Assets/Images/og-image.jpg">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        crossorigin="anonymous" referrerpolicy="no-referrer" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" /></noscript>
     <link rel="stylesheet" href="./Assets/css/main.css">
-    <link rel="stylesheet" href="./Assets/css/component.css">
     <link rel="stylesheet" href="./Assets/css/responsive.css">
 </head>
 
@@ -50,8 +64,8 @@
                 </ul>
                 <div class="nav-actions">
                     <div class="nav-search">
-                        <input type="text" placeholder="Search products...">
-                        <button class="search-icon">
+                        <input type="text" placeholder="Search products..." aria-label="Search products">
+                        <button class="search-icon" aria-label="Toggle search">
                             <svg viewBox="0 0 24 24">
                                 <circle cx="11" cy="11" r="8" />
                                 <path d="m21 21-4.35-4.35" />
@@ -66,7 +80,7 @@
                         </svg>
                         <span class="cart-count">0</span>
                     </a>
-                    <button class="hamburger" id="hamburger">
+                    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -89,7 +103,7 @@
 
             <section id="about-banner">
                 <div class="shop-banner-bg">
-                    <img src="./Assets/Images/shop-banner.jpg" alt="" class="shop-banner-img">
+                    <img alt="" aria-hidden="true" width="1600" height="1089" src="./Assets/Images/shop-banner.webp" class="shop-banner-img">
                     <div class="shop-banner-overlay"></div>
                     <div class="shop-banner-glow"></div>
                 </div>
@@ -106,7 +120,7 @@
 
             <section id="about-story">
                 <div class="story-img">
-                    <img src="./Assets/Images/about-story.jpg" alt="Our Story">
+                    <img alt="Neon-lit gaming desk setup with a custom PC" width="1200" height="801" loading="lazy" decoding="async" src="./Assets/Images/about-story.webp">
                     <div class="story-img-glow"></div>
                 </div>
                 <div class="story-content">
@@ -187,49 +201,34 @@
 
                     <div class="team-card">
                         <div class="team-img-wrapper">
-                            <img src="./Assets/Images/team-1.jpg" alt="Alex Carter">
+                            <img alt="Alex Carter, Founder and CEO of NEXUS" width="800" height="1200" loading="lazy" decoding="async" src="./Assets/Images/team-1.webp">
                             <div class="team-overlay"></div>
                         </div>
                         <div class="team-info">
                             <h3 class="team-name">Alex Carter</h3>
                             <p class="team-role">Founder & CEO</p>
-                            <div class="team-socials">
-                                <a href="#"><i class="fab fa-x-twitter"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            </div>
                         </div>
                     </div>
 
                     <div class="team-card">
                         <div class="team-img-wrapper">
-                            <img src="./Assets/Images/team-2.jpg" alt="Sara Lee">
+                            <img alt="Sara Lee, NEXUS team member" width="800" height="1422" loading="lazy" decoding="async" src="./Assets/Images/team-2.webp">
                             <div class="team-overlay"></div>
                         </div>
                         <div class="team-info">
                             <h3 class="team-name">Sara Lee</h3>
                             <p class="team-role">Head of Product</p>
-                            <div class="team-socials">
-                                <a href="#"><i class="fab fa-x-twitter"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            </div>
                         </div>
                     </div>
 
                     <div class="team-card">
                         <div class="team-img-wrapper">
-                            <img src="./Assets/Images/team-3.jpg" alt="Marcus Reid">
+                            <img alt="Marcus Reid, NEXUS team member" width="800" height="1199" loading="lazy" decoding="async" src="./Assets/Images/team-3.webp">
                             <div class="team-overlay"></div>
                         </div>
                         <div class="team-info">
                             <h3 class="team-name">Marcus Reid</h3>
                             <p class="team-role">Lead Developer</p>
-                            <div class="team-socials">
-                                <a href="#"><i class="fab fa-x-twitter"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            </div>
                         </div>
                     </div>
 
@@ -240,25 +239,26 @@
             <section id="stats">
                 <div class="stats-wrapper">
                     <div class="stat-item">
-                        <h3 class="stat-num"><span class="count" data-target="10000">0</span><span>+</span></h3>
+                        <h2 class="stat-num"><span class="count" data-target="1500">0</span><span>+</span></h2>
                         <p class="stat-label">Happy Customers</p>
                     </div>
                     <div class="stat-divider"></div>
                     <div class="stat-item">
-                        <h3 class="stat-num"><span class="count" data-target="500">0</span><span>+</span></h3>
+                        <h2 class="stat-num"><span class="count" data-target="12">0</span><span>+</span></h2>
                         <p class="stat-label">Products</p>
                     </div>
                     <div class="stat-divider"></div>
                     <div class="stat-item">
-                        <h3 class="stat-num"><span class="count" data-target="4.9">0</span><span>★</span></h3>
+                        <h2 class="stat-num"><span class="count" data-target="4.6">0</span><span>★</span></h2>
                         <p class="stat-label">Average Rating</p>
                     </div>
                     <div class="stat-divider"></div>
                     <div class="stat-item">
-                        <h3 class="stat-num">Free<span>.</span></h3>
+                        <h2 class="stat-num">Free<span>.</span></h2>
                         <p class="stat-label">Worldwide Shipping</p>
                     </div>
                 </div>
+                <p class="stats-note">Sample figures for demonstration purposes.</p>
             </section>
 
         </main>
@@ -269,15 +269,11 @@
                     <a href="index.html" class="footer-logo">NEX<span>US</span></a>
                     <p class="footer-tagline">Gear up. Dominate. Repeat.</p>
                     <div class="footer-socials">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-x-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-discord"></i></a>
+                        <a href="https://github.com/codewithfaseehh59" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="NEXUS developer on GitHub"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
-                    <h4 class="footer-col-heading">Quick Links</h4>
+                    <h2 class="footer-col-heading">Quick Links</h2>
                     <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="shop.html">Shop</a></li>
@@ -286,7 +282,7 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4 class="footer-col-heading">Categories</h4>
+                    <h2 class="footer-col-heading">Categories</h2>
                     <ul class="footer-links">
                         <li><a href="shop.html">PC Builds</a></li>
                         <li><a href="shop.html">Keyboards</a></li>
@@ -297,39 +293,39 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4 class="footer-col-heading">Support</h4>
+                    <h2 class="footer-col-heading">Support</h2>
                     <ul class="footer-links">
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Shipping Policy</a></li>
-                        <li><a href="#">Return Policy</a></li>
-                        <li><a href="#">Track Order</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="shipping.html">Shipping Policy</a></li>
+                        <li><a href="returns.html">Return Policy</a></li>
+                        <li><a href="track-order.html">Track Order</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="footer-col footer-newsletter">
-                    <h4 class="footer-col-heading">Newsletter</h4>
+                    <h2 class="footer-col-heading">Newsletter</h2>
                     <p class="footer-newsletter-text">Get exclusive deals and latest drops straight to your inbox.</p>
                     <div class="newsletter-form">
-                        <input type="email" placeholder="Your email address">
-                        <button class="newsletter-btn">
+                        <input type="email" placeholder="Your email address" aria-label="Email address">
+                        <button class="newsletter-btn" aria-label="Subscribe to newsletter">
                             <i class="fas fa-arrow-right"></i>
                         </button>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p class="footer-copy">© 2024 NEXUS. All rights reserved.</p>
+                <p class="footer-copy">© 2026 NEXUS. All rights reserved.</p>
                 <p class="footer-credit">Designed & Built with <span>♥</span></p>
             </div>
         </footer>
 
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script type="text/javascript" src="https://unpkg.com/sheryjs/dist/Shery.js"></script>
-    <script src="./Assets/js/main.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script defer src="./Assets/js/main.js"></script>
+    <script defer src="./Assets/js/store.js"></script>
 
 </body>
 

@@ -31,6 +31,12 @@ function initCategoryFilter() {
   });
 }
 
+function initRatingFilter() {
+  document.querySelectorAll("input[name='rating']").forEach(radio => {
+    radio.addEventListener("change", filterProducts);
+  });
+}
+
 function initSort() {
   const sortSelect = document.getElementById("sortSelect");
   if (!sortSelect) return;
@@ -52,6 +58,8 @@ function filterProducts() {
   });
 
   const showAll = checkedCategories.includes("all") || checkedCategories.length === 0;
+  const ratingInput = document.querySelector("input[name='rating']:checked");
+  const minRating = ratingInput ? parseInt(ratingInput.dataset.minRating) : 0;
 
   let visibleCount = 0;
 
@@ -60,8 +68,9 @@ function filterProducts() {
     const price = parseInt(card.dataset.price);
     const categoryMatch = showAll || checkedCategories.includes(category);
     const priceMatch = price <= maxPrice;
+    const ratingMatch = parseInt(card.dataset.rating) >= minRating;
 
-    if (categoryMatch && priceMatch) {
+    if (categoryMatch && priceMatch && ratingMatch) {
       gsap.to(card, {
         opacity: 1,
         scale: 1,
@@ -195,6 +204,7 @@ function initShopReveal() {
 function initShop() {
   initPriceSlider();
   initCategoryFilter();
+  initRatingFilter();
   initSort();
   initLoadMore();
   initShopReveal();

@@ -1,11 +1,13 @@
 @font-face {
     font-family: "barlow";
     src: url("../Fonts/Barlow/BarlowCondensed-Regular.ttf");
+    font-display: swap;
 }
 
 @font-face {
     font-family: "spaceMono";
     src: url("../Fonts/SpaceMono/SpaceMono-Regular.ttf");
+    font-display: swap;
 }
 
 
@@ -18,6 +20,7 @@
 }
 
 html {
+    --min-font-size: 11px;
     font-size: 16px;
     scroll-behavior: smooth;
 }
@@ -34,6 +37,7 @@ body {
 img,
 video {
     max-width: 100%;
+    height: auto;
     display: block;
 }
 
@@ -104,7 +108,13 @@ select {
     display: inline-block;
     transform: translateY(120px);
     opacity: 0;
+    animation: loaderRise 0.7s cubic-bezier(0.23, 1, 0.32, 1) forwards;
 }
+
+.loader-logo span:nth-child(2) { animation-delay: 0.04s; }
+.loader-logo span:nth-child(3) { animation-delay: 0.08s; }
+.loader-logo span:nth-child(4) { animation-delay: 0.12s; }
+.loader-logo span:nth-child(5) { animation-delay: 0.16s; }
 
 .loader-logo span:nth-child(odd) {
     -webkit-text-stroke: 2px #7b2fff;
@@ -113,12 +123,13 @@ select {
 
 .loader-tagline {
     font-family: "spaceMono";
-    font-size: clamp(0.5rem, 0.9vw, 0.75rem);
+    font-size: max(clamp(0.5rem, 0.9vw, 0.75rem), var(--min-font-size));
     letter-spacing: 6px;
     text-transform: uppercase;
     color: #888888;
     opacity: 0;
     transform: translateY(20px);
+    animation: loaderFadeUp 0.5s ease-out 0.3s forwards;
 }
 
 .loader-progress {
@@ -128,6 +139,7 @@ select {
     position: relative;
     overflow: hidden;
     opacity: 0;
+    animation: loaderFadeUp 0.5s ease-out 0.35s forwards;
 }
 
 .loader-progress-bar {
@@ -135,21 +147,38 @@ select {
     top: 0;
     left: 0;
     height: 100%;
-    width: 0%;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: left;
+    will-change: transform;
     background: linear-gradient(to right,
             transparent,
             #7b2fff,
             #f0f0f0);
     box-shadow: 0 0 10px rgba(123, 47, 255, 0.8);
-    transition: width 0.1s linear;
 }
 
 .loader-percent {
     font-family: "barlow";
-    font-size: clamp(0.7rem, 1vw, 0.9rem);
+    font-size: max(clamp(0.7rem, 1vw, 0.9rem), var(--min-font-size));
     letter-spacing: 4px;
     color: #7b2fff;
     opacity: 0;
+    animation: loaderFadeUp 0.5s ease-out 0.4s forwards;
+}
+
+@keyframes loaderRise {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes loaderFadeUp {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 .loader-content::before {
@@ -236,7 +265,7 @@ select {
 
 .nav-links a {
     font-family: "spaceMono";
-    font-size: clamp(0.6rem, 0.8vw, 0.75rem);
+    font-size: max(clamp(0.6rem, 0.8vw, 0.75rem), var(--min-font-size));
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #888888;
@@ -282,7 +311,7 @@ select {
     opacity: 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     color: #f0f0f0;
-    font-size: clamp(0.6rem, 0.8vw, 0.75rem);
+    font-size: max(clamp(0.6rem, 0.8vw, 0.75rem), var(--min-font-size));
     letter-spacing: 1px;
     padding: 4px 8px;
     transition: width 0.4s ease, opacity 0.4s ease;
@@ -343,7 +372,7 @@ select {
     height: 16px;
     background: #7b2fff;
     color: #f0f0f0;
-    font-size: clamp(0.5rem, 0.6vw, 0.6rem);
+    font-size: max(clamp(0.5rem, 0.6vw, 0.6rem), var(--min-font-size));
     font-weight: 700;
     border-radius: 50%;
     display: flex;
@@ -492,7 +521,7 @@ select {
 
 .hero-tagline {
     font-family: "spaceMono";
-    font-size: clamp(0.6rem, 0.9vw, 0.75rem);
+    font-size: max(clamp(0.6rem, 0.9vw, 0.75rem), var(--min-font-size));
     letter-spacing: 4px;
     text-transform: uppercase;
     color: #7b2fff;
@@ -515,7 +544,7 @@ select {
 
 .hero-sub {
     font-family: "spaceMono";
-    font-size: clamp(0.65rem, 1vw, 0.85rem);
+    font-size: max(clamp(0.65rem, 1vw, 0.85rem), var(--min-font-size));
     color: #888888;
     letter-spacing: 1px;
     line-height: 1.8;
@@ -530,7 +559,7 @@ select {
 
 .btn-primary {
     font-family: "spaceMono";
-    font-size: clamp(0.6rem, 0.8vw, 0.75rem);
+    font-size: max(clamp(0.6rem, 0.8vw, 0.75rem), var(--min-font-size));
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #f0f0f0;
@@ -547,7 +576,7 @@ select {
 
 .btn-ghost {
     font-family: "spaceMono";
-    font-size: clamp(0.6rem, 0.8vw, 0.75rem);
+    font-size: max(clamp(0.6rem, 0.8vw, 0.75rem), var(--min-font-size));
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #888888;
@@ -594,9 +623,9 @@ select {
             transparent 100%);
     border: 1px solid rgba(123, 47, 255, 0.2);
     box-shadow:
-        0 0 40px rgba(123, 47, 255, 0.15),
-        0 0 80px rgba(123, 47, 255, 0.08),
-        inset 0 0 40px rgba(123, 47, 255, 0.08);
+        0 0 50px rgba(123, 47, 255, 0.2),
+        0 0 100px rgba(123, 47, 255, 0.1),
+        inset 0 0 50px rgba(123, 47, 255, 0.1);
     animation: spherePulse 4s ease-in-out infinite;
     position: relative;
 }
@@ -623,17 +652,11 @@ select {
 
     0%,
     100% {
-        box-shadow:
-            0 0 40px rgba(123, 47, 255, 0.15),
-            0 0 80px rgba(123, 47, 255, 0.08),
-            inset 0 0 40px rgba(123, 47, 255, 0.08);
+        transform: scale(1);
     }
 
     50% {
-        box-shadow:
-            0 0 60px rgba(123, 47, 255, 0.25),
-            0 0 120px rgba(123, 47, 255, 0.12),
-            inset 0 0 60px rgba(123, 47, 255, 0.12);
+        transform: scale(1.04);
     }
 }
 
@@ -733,7 +756,7 @@ select {
 
 .hero-scroll p {
     font-family: "spaceMono";
-    font-size: clamp(0.5rem, 0.7vw, 0.6rem);
+    font-size: max(clamp(0.5rem, 0.7vw, 0.6rem), var(--min-font-size));
     letter-spacing: 3px;
     text-transform: uppercase;
     color: #888888;
@@ -775,7 +798,7 @@ select {
 
 .stat-label {
     font-family: "spaceMono";
-    font-size: clamp(0.55, 0.8vw, 0.7rem);
+    font-size: max(clamp(0.55rem, 0.8vw, 0.7rem), var(--min-font-size));
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #888888;
@@ -800,10 +823,10 @@ select {
 
 .section-tag {
     font-family: "spaceMono";
-    font-size: clamp(0.55rem, 0.8vw, 0.7rem);
+    font-size: max(clamp(0.55rem, 0.8vw, 0.7rem), var(--min-font-size));
     letter-spacing: 4px;
     text-transform: uppercase;
-    color: #7b2fff;
+    color: #9a63ff;
     margin-bottom: 12px;
 }
 
@@ -878,7 +901,7 @@ select {
 
 .cat-num {
     font-family: "spaceMono";
-    font-size: clamp(0.55rem, 0.8vw, 0.7rem);
+    font-size: max(clamp(0.55rem, 0.8vw, 0.7rem), var(--min-font-size));
     letter-spacing: 3px;
     color: #7b2fff;
     margin-bottom: 8px;
@@ -896,7 +919,7 @@ select {
 
 .cat-link {
     font-family: "spaceMono";
-    font-size: clamp(0.55rem, 0.8vw, 0.65rem);
+    font-size: max(clamp(0.55rem, 0.8vw, 0.65rem), var(--min-font-size));
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #888888;
@@ -930,7 +953,7 @@ select {
 
 .fp-filter {
     font-family: "spaceMono";
-    font-size: clamp(0.55rem, 0.8vw, 0.7rem);
+    font-size: max(clamp(0.55rem, 0.8vw, 0.7rem), var(--min-font-size));
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #888888;
@@ -952,7 +975,7 @@ select {
 
 .fp-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 24px;
 }
 
@@ -1032,7 +1055,7 @@ select {
 
 .prod-tag {
     font-family: "spaceMono";
-    font-size: clamp(0.5rem, 0.7vw, 0.6rem);
+    font-size: max(clamp(0.5rem, 0.7vw, 0.6rem), var(--min-font-size));
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #7b2fff;
@@ -1064,14 +1087,14 @@ select {
 }
 
 .stars {
-    font-size: clamp(0.6rem, 0.8vw, 0.7rem);
+    font-size: max(clamp(0.6rem, 0.8vw, 0.7rem), var(--min-font-size));
     color: #7b2fff;
     letter-spacing: 2px;
 }
 
 .rating-count {
     font-family: "spaceMono";
-    font-size: clamp(0.5rem, 0.6vw, 0.6rem);
+    font-size: max(clamp(0.5rem, 0.6vw, 0.6rem), var(--min-font-size));
     color: #888888;
 }
 
@@ -1091,7 +1114,7 @@ select {
 .prod-cart-btn {
     width: 100%;
     font-family: "spaceMono";
-    font-size: clamp(0.55rem, 0.8vw, 0.7rem);
+    font-size: max(clamp(0.55rem, 0.8vw, 0.7rem), var(--min-font-size));
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #f0f0f0;
@@ -1172,7 +1195,7 @@ select {
 
 .bp-text {
     font-family: "spaceMono";
-    font-size: clamp(0.65rem, 1vw, 0.8rem);
+    font-size: max(clamp(0.65rem, 1vw, 0.8rem), var(--min-font-size));
     color: #888888;
     line-height: 2;
     max-width: 480px;
@@ -1208,7 +1231,7 @@ select {
 
 .footer-tagline {
     font-family: "spaceMono";
-    font-size: clamp(0.55rem, 0.8vw, 0.7rem);
+    font-size: max(clamp(0.55rem, 0.8vw, 0.7rem), var(--min-font-size));
     color: #888888;
     letter-spacing: 1px;
     line-height: 1.8;
@@ -1256,7 +1279,7 @@ select {
 
 .footer-links a {
     font-family: "spaceMono";
-    font-size: clamp(0.55rem, 0.8vw, 0.7rem);
+    font-size: max(clamp(0.55rem, 0.8vw, 0.7rem), var(--min-font-size));
     letter-spacing: 1px;
     color: #888888;
     transition: color 0.3s, padding-left 0.3s;
@@ -1269,7 +1292,7 @@ select {
 
 .footer-newsletter-text {
     font-family: "spaceMono";
-    font-size: clamp(0.55rem, 0.8vw, 0.7rem);
+    font-size: max(clamp(0.55rem, 0.8vw, 0.7rem), var(--min-font-size));
     color: #888888;
     line-height: 1.8;
     margin-bottom: 20px;
@@ -1288,7 +1311,7 @@ select {
 .newsletter-form input {
     flex: 1;
     padding: 12px 16px;
-    font-size: clamp(0.55rem, 0.8vw, 0.7rem);
+    font-size: max(clamp(0.55rem, 0.8vw, 0.7rem), var(--min-font-size));
     letter-spacing: 1px;
     color: #f0f0f0;
     background: transparent;
@@ -1323,14 +1346,14 @@ select {
 
 .footer-copy {
     font-family: "spaceMono";
-    font-size: clamp(0.5rem, 0.7vw, 0.65rem);
+    font-size: max(clamp(0.5rem, 0.7vw, 0.65rem), var(--min-font-size));
     color: #888888;
     letter-spacing: 1px;
 }
 
 .footer-credit {
     font-family: "spaceMono";
-    font-size: clamp(0.5rem, 0.7vw, 0.65rem);
+    font-size: max(clamp(0.5rem, 0.7vw, 0.65rem), var(--min-font-size));
     color: #888888;
     letter-spacing: 1px;
 }
@@ -1339,7 +1362,11 @@ select {
     color: #7b2fff;
 }
 
-#shop-banner {
+#shop-banner,
+
+#about-banner,
+
+#contact-banner {
     position: relative;
     height: 40vh;
     min-height: 300px;
@@ -1407,7 +1434,7 @@ select {
     align-items: center;
     gap: 10px;
     font-family: "spaceMono";
-    font-size: clamp(0.55rem, 0.8vw, 0.7rem);
+    font-size: max(clamp(0.55rem, 0.8vw, 0.7rem), var(--min-font-size));
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #888888;
@@ -1478,7 +1505,7 @@ select {
     align-items: center;
     gap: 12px;
     font-family: "spaceMono";
-    font-size: clamp(0.55rem, 0.8vw, 0.7rem);
+    font-size: max(clamp(0.55rem, 0.8vw, 0.7rem), var(--min-font-size));
     letter-spacing: 1px;
     color: #888888;
     cursor: none;
@@ -1541,14 +1568,14 @@ select {
 
 .sidebar-count {
     margin-left: auto;
-    font-size: clamp(0.5rem, 0.6vw, 0.6rem);
-    color: #555555;
+    font-size: max(clamp(0.5rem, 0.6vw, 0.6rem), var(--min-font-size));
+    color: #888888;
 }
 
 .sidebar-stars {
     color: #7b2fff;
     letter-spacing: 2px;
-    font-size: clamp(0.6rem, 0.8vw, 0.7rem);
+    font-size: max(clamp(0.6rem, 0.8vw, 0.7rem), var(--min-font-size));
 }
 
 
@@ -1591,7 +1618,7 @@ select {
     display: flex;
     justify-content: space-between;
     font-family: "spaceMono";
-    font-size: clamp(0.55rem, 0.7vw, 0.65rem);
+    font-size: max(clamp(0.55rem, 0.7vw, 0.65rem), var(--min-font-size));
     color: #888888;
     letter-spacing: 1px;
 }
@@ -1614,7 +1641,7 @@ select {
 
 .shop-results {
     font-family: "spaceMono";
-    font-size: clamp(0.55rem, 0.8vw, 0.7rem);
+    font-size: max(clamp(0.55rem, 0.8vw, 0.7rem), var(--min-font-size));
     letter-spacing: 1px;
     color: #888888;
 }
@@ -1628,7 +1655,7 @@ select {
     align-items: center;
     gap: 12px;
     font-family: "spaceMono";
-    font-size: clamp(0.55rem, 0.8vw, 0.7rem);
+    font-size: max(clamp(0.55rem, 0.8vw, 0.7rem), var(--min-font-size));
     letter-spacing: 1px;
     color: #888888;
 }
@@ -1638,7 +1665,7 @@ select {
     border: 1px solid rgba(255, 255, 255, 0.06);
     color: #f0f0f0;
     padding: 8px 14px;
-    font-size: clamp(0.55rem, 0.8vw, 0.7rem);
+    font-size: max(clamp(0.55rem, 0.8vw, 0.7rem), var(--min-font-size));
     letter-spacing: 1px;
     cursor: none;
     transition: border-color 0.3s;
@@ -1656,7 +1683,7 @@ select {
 
 .shop-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 24px;
 }
 
@@ -1669,7 +1696,7 @@ select {
 
 .load-more-btn {
     font-family: "spaceMono";
-    font-size: clamp(0.6rem, 0.8vw, 0.75rem);
+    font-size: max(clamp(0.6rem, 0.8vw, 0.75rem), var(--min-font-size));
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #888888;
@@ -1702,7 +1729,7 @@ select {
     align-items: center;
     gap: 10px;
     font-family: "spaceMono";
-    font-size: clamp(0.55rem, 0.8vw, 0.7rem);
+    font-size: max(clamp(0.55rem, 0.8vw, 0.7rem), var(--min-font-size));
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #888888;
@@ -1728,7 +1755,7 @@ select {
 #product-section {
     padding: 50px 60px 100px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 80px;
     align-items: start;
 }
@@ -1829,7 +1856,7 @@ select {
 
 .product-rating .rating-count {
     font-family: "spaceMono";
-    font-size: clamp(0.55rem, 0.8vw, 0.7rem);
+    font-size: max(clamp(0.55rem, 0.8vw, 0.7rem), var(--min-font-size));
     color: #888888;
 }
 .product-price {
@@ -1853,14 +1880,14 @@ select {
 
 .price-old {
     font-family: "spaceMono";
-    font-size: clamp(0.65rem, 0.9vw, 0.8rem);
+    font-size: max(clamp(0.65rem, 0.9vw, 0.8rem), var(--min-font-size));
     color: #555555;
     text-decoration: line-through;
 }
 
 .price-badge {
     font-family: "spaceMono";
-    font-size: clamp(0.5rem, 0.7vw, 0.6rem);
+    font-size: max(clamp(0.5rem, 0.7vw, 0.6rem), var(--min-font-size));
     letter-spacing: 2px;
     color: #f0f0f0;
     background: #7b2fff;
@@ -1869,7 +1896,7 @@ select {
 
 .product-desc {
     font-family: "spaceMono";
-    font-size: clamp(0.6rem, 0.9vw, 0.75rem);
+    font-size: max(clamp(0.6rem, 0.9vw, 0.75rem), var(--min-font-size));
     color: #888888;
     line-height: 2;
 }
@@ -1881,7 +1908,7 @@ select {
 }
 .product-option-label {
     font-family: "spaceMono";
-    font-size: clamp(0.55rem, 0.8vw, 0.7rem);
+    font-size: max(clamp(0.55rem, 0.8vw, 0.7rem), var(--min-font-size));
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #888888;
@@ -1940,7 +1967,7 @@ select {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    font-size: clamp(0.6rem, 0.8vw, 0.75rem);
+    font-size: max(clamp(0.6rem, 0.8vw, 0.75rem), var(--min-font-size));
 }
 
 .product-cart-btn i {
@@ -2002,7 +2029,7 @@ select {
     justify-content: space-between;
     padding: 18px 0;
     font-family: "spaceMono";
-    font-size: clamp(0.6rem, 0.8vw, 0.75rem);
+    font-size: max(clamp(0.6rem, 0.8vw, 0.75rem), var(--min-font-size));
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #888888;
@@ -2045,7 +2072,7 @@ select {
     display: flex;
     justify-content: space-between;
     font-family: "spaceMono";
-    font-size: clamp(0.55rem, 0.8vw, 0.7rem);
+    font-size: max(clamp(0.55rem, 0.8vw, 0.7rem), var(--min-font-size));
     letter-spacing: 1px;
     padding-bottom: 10px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.04);
@@ -2061,7 +2088,7 @@ select {
 
 .accordion-text {
     font-family: "spaceMono";
-    font-size: clamp(0.55rem, 0.8vw, 0.7rem);
+    font-size: max(clamp(0.55rem, 0.8vw, 0.7rem), var(--min-font-size));
     color: #888888;
     line-height: 2;
     padding-bottom: 20px;
@@ -2077,7 +2104,7 @@ select {
 
 .related-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 24px;
 }
 
@@ -2115,7 +2142,7 @@ select {
     padding: 0 0 16px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     font-family: "spaceMono";
-    font-size: clamp(0.5rem, 0.7vw, 0.65rem);
+    font-size: max(clamp(0.5rem, 0.7vw, 0.65rem), var(--min-font-size));
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #888888;
@@ -2157,7 +2184,7 @@ select {
 
 .cart-item-tag {
     font-family: "spaceMono";
-    font-size: clamp(0.5rem, 0.6vw, 0.6rem);
+    font-size: max(clamp(0.5rem, 0.6vw, 0.6rem), var(--min-font-size));
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #7b2fff;
@@ -2217,7 +2244,7 @@ select {
     max-width: 280px;
     border: 1px solid rgba(255, 255, 255, 0.06);
     padding: 12px 16px;
-    font-size: clamp(0.55rem, 0.8vw, 0.7rem);
+    font-size: max(clamp(0.55rem, 0.8vw, 0.7rem), var(--min-font-size));
     letter-spacing: 1px;
     color: #f0f0f0;
     transition: border-color 0.3s;
@@ -2267,7 +2294,7 @@ select {
     justify-content: space-between;
     align-items: center;
     font-family: "spaceMono";
-    font-size: clamp(0.55rem, 0.8vw, 0.7rem);
+    font-size: max(clamp(0.55rem, 0.8vw, 0.7rem), var(--min-font-size));
     letter-spacing: 1px;
     color: #888888;
 }
@@ -2308,7 +2335,7 @@ select {
     justify-content: center;
     gap: 10px;
     padding: 16px;
-    font-size: clamp(0.6rem, 0.8vw, 0.75rem);
+    font-size: max(clamp(0.6rem, 0.8vw, 0.75rem), var(--min-font-size));
 }
 
 .checkout-btn i {
@@ -2317,7 +2344,7 @@ select {
 
 .cart-continue {
     font-family: "spaceMono";
-    font-size: clamp(0.55rem, 0.8vw, 0.7rem);
+    font-size: max(clamp(0.55rem, 0.8vw, 0.7rem), var(--min-font-size));
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #888888;
@@ -2337,7 +2364,7 @@ select {
 #about-story {
     padding: 100px 60px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 80px;
     align-items: center;
 }
@@ -2374,7 +2401,7 @@ select {
 
 .story-text {
     font-family: "spaceMono";
-    font-size: clamp(0.6rem, 0.9vw, 0.75rem);
+    font-size: max(clamp(0.6rem, 0.9vw, 0.75rem), var(--min-font-size));
     color: #888888;
     line-height: 2;
 }
@@ -2399,7 +2426,7 @@ select {
 
 .story-stat p {
     font-family: "spaceMono";
-    font-size: clamp(0.5rem, 0.7vw, 0.65rem);
+    font-size: max(clamp(0.5rem, 0.7vw, 0.65rem), var(--min-font-size));
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #888888;
@@ -2415,7 +2442,7 @@ select {
 
 .values-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 30px;
 }
 
@@ -2458,7 +2485,7 @@ select {
 
 .value-text {
     font-family: "spaceMono";
-    font-size: clamp(0.55rem, 0.8vw, 0.7rem);
+    font-size: max(clamp(0.55rem, 0.8vw, 0.7rem), var(--min-font-size));
     color: #888888;
     line-height: 2;
 }
@@ -2472,7 +2499,7 @@ select {
 
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 30px;
 }
 
@@ -2530,41 +2557,11 @@ select {
 
 .team-role {
     font-family: "spaceMono";
-    font-size: clamp(0.5rem, 0.7vw, 0.65rem);
+    font-size: max(clamp(0.5rem, 0.7vw, 0.65rem), var(--min-font-size));
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #7b2fff;
     margin-bottom: 10px;
-}
-
-.team-socials {
-    display: flex;
-    gap: 10px;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 0.3s, transform 0.3s;
-}
-
-.team-card:hover .team-socials {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.team-socials a {
-    width: 30px;
-    height: 30px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #888888;
-    font-size: 11px;
-    transition: all 0.3s;
-}
-
-.team-socials a:hover {
-    border-color: #7b2fff;
-    color: #7b2fff;
 }
 
 #contact-banner {
@@ -2595,7 +2592,7 @@ select {
 
 .contact-desc {
     font-family: "spaceMono";
-    font-size: clamp(0.6rem, 0.9vw, 0.75rem);
+    font-size: max(clamp(0.6rem, 0.9vw, 0.75rem), var(--min-font-size));
     color: #888888;
     line-height: 2;
 }
@@ -2627,7 +2624,7 @@ select {
     color: #7b2fff;
 }
 
-.contact-detail-text h4 {
+.contact-detail-text h3 {
     font-family: "barlow";
     font-size: clamp(0.9rem, 1.2vw, 1.1rem);
     font-weight: 600;
@@ -2639,7 +2636,7 @@ select {
 
 .contact-detail-text p {
     font-family: "spaceMono";
-    font-size: clamp(0.55rem, 0.8vw, 0.7rem);
+    font-size: max(clamp(0.55rem, 0.8vw, 0.7rem), var(--min-font-size));
     color: #888888;
     letter-spacing: 1px;
 }
@@ -2657,7 +2654,7 @@ select {
 
 .contact-form-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 24px;
 }
 
@@ -2669,7 +2666,7 @@ select {
 
 .form-label {
     font-family: "spaceMono";
-    font-size: clamp(0.55rem, 0.7vw, 0.65rem);
+    font-size: max(clamp(0.55rem, 0.7vw, 0.65rem), var(--min-font-size));
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #888888;
@@ -2680,7 +2677,7 @@ select {
     border: 1px solid rgba(255, 255, 255, 0.06);
     padding: 14px 18px;
     font-family: "spaceMono";
-    font-size: clamp(0.55rem, 0.8vw, 0.7rem);
+    font-size: max(clamp(0.55rem, 0.8vw, 0.7rem), var(--min-font-size));
     letter-spacing: 1px;
     color: #f0f0f0;
     transition: border-color 0.3s;
@@ -2707,7 +2704,7 @@ select {
     gap: 12px;
     width: fit-content;
     padding: 16px 40px;
-    font-size: clamp(0.6rem, 0.8vw, 0.75rem);
+    font-size: max(clamp(0.6rem, 0.8vw, 0.75rem), var(--min-font-size));
 }
 
 .contact-submit-btn i {
@@ -2718,4 +2715,253 @@ select {
     width: 100%;
     filter: grayscale(100%) invert(92%) hue-rotate(180deg);
     opacity: 0.6;
+}
+
+.native-cursor,
+.native-cursor * {
+    cursor: auto !important;
+}
+
+.native-cursor a,
+.native-cursor button,
+.native-cursor [role="button"] {
+    cursor: pointer !important;
+}
+
+.stats-note {
+    margin-top: 28px;
+    text-align: center;
+    font-family: "spaceMono";
+    font-size: max(clamp(0.5rem, 0.7vw, 0.6rem), var(--min-font-size));
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #888888;
+}
+
+.checkout-note {
+    margin-top: 14px;
+    font-family: "spaceMono";
+    font-size: max(clamp(0.55rem, 0.8vw, 0.7rem), var(--min-font-size));
+    line-height: 1.8;
+    color: #888888;
+}
+
+#cartList {
+    min-height: 280px;
+}
+
+.cart-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 60px 20px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: #0e0e14;
+}
+
+.cart-empty i {
+    font-size: 40px;
+    color: #7b2fff;
+}
+
+.cart-empty h2 {
+    font-family: "barlow";
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.cart-empty p {
+    font-family: "spaceMono";
+    font-size: max(clamp(0.6rem, 0.9vw, 0.75rem), var(--min-font-size));
+    color: #888888;
+    line-height: 2;
+}
+
+#info-page {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 100px 60px;
+}
+
+.info-block {
+    margin-bottom: 56px;
+}
+
+.info-heading {
+    font-family: "barlow";
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #f0f0f0;
+    margin-bottom: 18px;
+}
+
+.info-heading span {
+    color: #7b2fff;
+}
+
+.info-text {
+    font-family: "spaceMono";
+    font-size: max(clamp(0.6rem, 0.9vw, 0.75rem), var(--min-font-size));
+    color: #888888;
+    line-height: 2;
+}
+
+.info-text+.info-text,
+.info-table+.info-text {
+    margin-top: 16px;
+}
+
+.info-footnote {
+    margin-top: 40px;
+}
+
+.info-link {
+    color: #9a63ff;
+    border-bottom: 1px solid rgba(123, 47, 255, 0.4);
+}
+
+.info-link:hover {
+    color: #f0f0f0;
+}
+
+.info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.info-list li {
+    position: relative;
+    padding-left: 22px;
+    font-family: "spaceMono";
+    font-size: max(clamp(0.6rem, 0.9vw, 0.75rem), var(--min-font-size));
+    color: #888888;
+    line-height: 1.9;
+}
+
+.info-list li::before {
+    content: "//";
+    position: absolute;
+    left: 0;
+    color: #7b2fff;
+}
+
+.info-table {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.info-row {
+    display: grid;
+    grid-template-columns: 1.4fr 1.4fr 1fr;
+    gap: 16px;
+    padding: 16px 20px;
+    font-family: "spaceMono";
+    font-size: max(clamp(0.55rem, 0.8vw, 0.7rem), var(--min-font-size));
+    color: #888888;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-row:first-child {
+    color: #f0f0f0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: #0e0e14;
+}
+
+.track-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 28px;
+    max-width: 520px;
+}
+
+.track-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    margin-left: 8px;
+}
+
+.track-steps li {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 0 0 28px 28px;
+    font-family: "spaceMono";
+    font-size: max(clamp(0.55rem, 0.8vw, 0.7rem), var(--min-font-size));
+    color: #888888;
+}
+
+.track-steps li:last-child {
+    padding-bottom: 0;
+}
+
+.track-steps li strong {
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: normal;
+    color: #888888;
+}
+
+.track-steps li::before {
+    content: "";
+    position: absolute;
+    left: -6px;
+    top: 2px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: #050508;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.track-steps li.done strong,
+.track-steps li.current strong {
+    color: #f0f0f0;
+}
+
+.track-steps li.done::before {
+    background: #7b2fff;
+    border-color: #7b2fff;
+}
+
+.track-steps li.current::before {
+    border-color: #7b2fff;
+    box-shadow: 0 0 10px rgba(123, 47, 255, 0.8);
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    #loader {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        --min-font-size: 12px;
+    }
 }

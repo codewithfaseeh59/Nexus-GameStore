@@ -49,7 +49,7 @@
   }
 
   .fp-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 20px;
   }
   #brand-promise {
@@ -163,7 +163,7 @@
   }
 
   .fp-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px;
   }
 
@@ -197,7 +197,7 @@
   }
 
   .footer-top {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 36px;
   }
 
@@ -288,7 +288,7 @@
   }
 
   .fp-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
   }
 
@@ -305,7 +305,7 @@
   }
 
   .footer-top {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 30px;
   }
 
@@ -327,7 +327,13 @@
 @media (max-width: 1024px) {
 
 
-  #shop-banner {
+  #shop-banner,
+
+
+  #about-banner,
+
+
+  #contact-banner {
     padding: 0 40px;
   }
 
@@ -340,7 +346,7 @@
 
 
   .shop-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px;
   }
 }
@@ -349,7 +355,13 @@
 @media (max-width: 768px) {
 
 
-  #shop-banner {
+  #shop-banner,
+
+
+  #about-banner,
+
+
+  #contact-banner {
     padding: 0 24px;
     height: 35vh;
     min-height: 240px;
@@ -358,7 +370,7 @@
 
   #shop-layout {
     padding: 40px 24px;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 30px;
   }
 
@@ -366,7 +378,7 @@
   .shop-sidebar {
     position: static;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0;
   }
 
@@ -382,7 +394,7 @@
 
 
   .shop-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px;
   }
 
@@ -398,7 +410,13 @@
 @media (max-width: 480px) {
 
 
-  #shop-banner {
+  #shop-banner,
+
+
+  #about-banner,
+
+
+  #contact-banner {
     padding: 0 20px;
     height: 30vh;
     min-height: 200px;
@@ -411,7 +429,7 @@
 
 
   .shop-sidebar {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .sidebar-block {
@@ -420,7 +438,7 @@
 
 
   .shop-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
   }
 
@@ -449,7 +467,7 @@
   }
 
   .related-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 20px;
   }
 }
@@ -462,7 +480,7 @@
 
   #product-section {
     padding: 40px 24px 70px;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 40px;
   }
 
@@ -503,7 +521,7 @@
   }
 
   .related-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px;
   }
 }
@@ -552,7 +570,7 @@
   }
 
   .related-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
   }
 }
@@ -587,7 +605,7 @@
 
   #cart-layout {
     padding: 40px 24px 70px;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 40px;
   }
 
@@ -596,7 +614,7 @@
   }
 
   .cart-item {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 14px;
     padding: 20px 0;
     position: relative;
@@ -689,12 +707,12 @@
   }
 
   .values-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 20px;
   }
 
   .team-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 20px;
   }
 }
@@ -704,7 +722,7 @@
 
   #about-story {
     padding: 60px 24px;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 40px;
   }
 
@@ -721,7 +739,7 @@
   }
 
   .values-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 16px;
   }
 
@@ -730,7 +748,7 @@
   }
 
   .team-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px;
   }
 
@@ -768,7 +786,7 @@
   }
 
   .team-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 14px;
   }
 }
@@ -793,7 +811,7 @@
 
   #contact-layout {
     padding: 60px 24px;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 50px;
   }
 
@@ -802,7 +820,7 @@
   }
 
   .contact-form-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 20px;
   }
 
@@ -834,5 +852,108 @@
 
   #contact-map {
     height: 250px;
+  }
+}
+
+
+/* ---------- Tap targets: 44px minimum on touch screens ---------- */
+@media (max-width: 768px) {
+
+  .nav-logo,
+  .search-icon,
+  .nav-cart,
+  .hamburger,
+  .btn-ghost,
+  .cat-link,
+  .cart-continue,
+  .prod-wishlist,
+  .cart-item-remove,
+  .social-icon,
+  .footer-logo,
+  .fp-filter,
+  .prod-cart-btn,
+  .load-more-btn,
+  .newsletter-btn,
+  .footer-links a,
+  .product-breadcrumb a,
+  .breadcrumb a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .nav-logo,
+  .footer-links a,
+  .breadcrumb a,
+  .cat-link,
+  .btn-ghost,
+  .cart-continue {
+    justify-content: flex-start;
+  }
+
+  .hamburger {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .nav-actions {
+    gap: 4px;
+  }
+
+  .form-input,
+  .newsletter-form input,
+  .nav-search input,
+  select,
+  .price-slider {
+    min-height: 44px;
+  }
+}
+
+
+@media (max-width: 1024px) {
+
+  #info-page {
+    padding: 80px 40px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  #info-page {
+    padding: 60px 24px;
+  }
+
+  .info-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  #info-page {
+    padding: 50px 20px;
+  }
+}
+
+
+@media (max-width: 768px) {
+
+  .prod-card,
+  .prod-info {
+    min-width: 0;
+  }
+
+  .prod-bottom {
+    flex-wrap: wrap;
+    gap: 6px 10px;
+  }
+
+  .mobile-menu a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
   }
 }

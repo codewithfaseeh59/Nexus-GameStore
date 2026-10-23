@@ -103,17 +103,15 @@ function initAddToCart() {
         }, 2000);
       }
     });
-    const cartCount = document.querySelector(".cart-count");
-    if (cartCount) {
-      const current = parseInt(cartCount.textContent) || 0;
-      cartCount.textContent = current + 1;
 
-      gsap.from(cartCount, {
-        scale: 0,
-        duration: 0.3,
-        ease: "back.out(1.7)"
-      });
-    }
+    const name = document.querySelector(".product-name").textContent.trim();
+    window.NexusCart.add({
+      id: window.NexusCart.slugify(name),
+      name: name,
+      tag: document.querySelector(".product-info .prod-tag").textContent.trim(),
+      price: parseFloat(document.querySelector(".price-current").textContent.replace(/[^0-9.]/g, "")),
+      img: document.getElementById("mainProductImg").getAttribute("src")
+    }, parseInt(document.getElementById("qtyValue").textContent) || 1);
   });
 }
 

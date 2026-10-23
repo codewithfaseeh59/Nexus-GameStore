@@ -4,14 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEXUS — Shop</title>
+    <title>Shop Gaming Gear — NEXUS</title>
+    <meta name="description" content="Browse the full NEXUS catalog of gaming keyboards, mice, headsets, monitors, controllers and PC builds. Filter by category and price to find your next upgrade.">
+    <meta name="theme-color" content="#050508">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NEXUS">
+    <meta property="og:title" content="Shop Gaming Gear — NEXUS">
+    <meta property="og:description" content="Browse the full NEXUS catalog of gaming keyboards, mice, headsets, monitors, controllers and PC builds. Filter by category and price to find your next upgrade.">
+    <meta property="og:image" content="Assets/Images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Shop Gaming Gear — NEXUS">
+    <meta name="twitter:description" content="Browse the full NEXUS catalog of gaming keyboards, mice, headsets, monitors, controllers and PC builds. Filter by category and price to find your next upgrade.">
+    <meta name="twitter:image" content="Assets/Images/og-image.jpg">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        crossorigin="anonymous" referrerpolicy="no-referrer" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" /></noscript>
     <link rel="stylesheet" href="./Assets/css/main.css">
-    <link rel="stylesheet" href="./Assets/css/component.css">
     <link rel="stylesheet" href="./Assets/css/responsive.css">
 </head>
 
@@ -53,8 +67,8 @@
                 </ul>
                 <div class="nav-actions">
                     <div class="nav-search">
-                        <input type="text" placeholder="Search products...">
-                        <button class="search-icon">
+                        <input type="text" placeholder="Search products..." aria-label="Search products">
+                        <button class="search-icon" aria-label="Toggle search">
                             <svg viewBox="0 0 24 24">
                                 <circle cx="11" cy="11" r="8" />
                                 <path d="m21 21-4.35-4.35" />
@@ -69,7 +83,7 @@
                         </svg>
                         <span class="cart-count">0</span>
                     </a>
-                    <button class="hamburger" id="hamburger">
+                    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -93,7 +107,7 @@
 
             <section id="shop-banner">
                 <div class="shop-banner-bg">
-                    <img src="./Assets/Images/shop-banner.jpg" alt="" class="shop-banner-img">
+                    <img alt="" aria-hidden="true" width="1600" height="1089" src="./Assets/Images/shop-banner.webp" class="shop-banner-img">
                     <div class="shop-banner-overlay"></div>
                     <div class="shop-banner-glow"></div>
                 </div>
@@ -116,14 +130,14 @@
 
 
                     <div class="sidebar-block">
-                        <h4 class="sidebar-heading">Categories</h4>
+                        <h2 class="sidebar-heading">Categories</h2>
                         <ul class="sidebar-list">
                             <li>
                                 <label class="sidebar-check">
                                     <input type="checkbox" checked data-category="all">
                                     <span class="checkmark"></span>
                                     All Products
-                                    <span class="sidebar-count">48</span>
+                                    <span class="sidebar-count">12</span>
                                 </label>
                             </li>
                             <li>
@@ -131,7 +145,7 @@
                                     <input type="checkbox" data-category="pc">
                                     <span class="checkmark"></span>
                                     PC Builds
-                                    <span class="sidebar-count">08</span>
+                                    <span class="sidebar-count">03</span>
                                 </label>
                             </li>
                             <li>
@@ -139,7 +153,7 @@
                                     <input type="checkbox" data-category="keyboard">
                                     <span class="checkmark"></span>
                                     Keyboards
-                                    <span class="sidebar-count">12</span>
+                                    <span class="sidebar-count">02</span>
                                 </label>
                             </li>
                             <li>
@@ -147,7 +161,7 @@
                                     <input type="checkbox" data-category="mouse">
                                     <span class="checkmark"></span>
                                     Mouse
-                                    <span class="sidebar-count">10</span>
+                                    <span class="sidebar-count">02</span>
                                 </label>
                             </li>
                             <li>
@@ -155,7 +169,7 @@
                                     <input type="checkbox" data-category="console">
                                     <span class="checkmark"></span>
                                     Consoles
-                                    <span class="sidebar-count">06</span>
+                                    <span class="sidebar-count">03</span>
                                 </label>
                             </li>
                             <li>
@@ -163,7 +177,7 @@
                                     <input type="checkbox" data-category="monitor">
                                     <span class="checkmark"></span>
                                     Monitors
-                                    <span class="sidebar-count">07</span>
+                                    <span class="sidebar-count">01</span>
                                 </label>
                             </li>
                             <li>
@@ -171,16 +185,16 @@
                                     <input type="checkbox" data-category="headset">
                                     <span class="checkmark"></span>
                                     Headsets
-                                    <span class="sidebar-count">05</span>
+                                    <span class="sidebar-count">01</span>
                                 </label>
                             </li>
                         </ul>
                     </div>
 
                     <div class="sidebar-block">
-                        <h4 class="sidebar-heading">Price Range</h4>
+                        <h2 class="sidebar-heading">Price Range</h2>
                         <div class="price-range">
-                            <input type="range" min="0" max="3000" value="3000" class="price-slider" id="priceSlider">
+                            <input type="range" min="0" max="3000" value="3000" class="price-slider" id="priceSlider" aria-label="Maximum price">
                             <div class="price-labels">
                                 <span>$0</span>
                                 <span id="priceValue">$3000</span>
@@ -190,64 +204,25 @@
 
 
                     <div class="sidebar-block">
-                        <h4 class="sidebar-heading">Brand</h4>
+                        <h2 class="sidebar-heading">Rating</h2>
                         <ul class="sidebar-list">
                             <li>
                                 <label class="sidebar-check">
-                                    <input type="checkbox">
-                                    <span class="checkmark"></span>
-                                    NEXUS
-                                    <span class="sidebar-count">24</span>
-                                </label>
-                            </li>
-                            <li>
-                                <label class="sidebar-check">
-                                    <input type="checkbox">
-                                    <span class="checkmark"></span>
-                                    Razer
-                                    <span class="sidebar-count">10</span>
-                                </label>
-                            </li>
-                            <li>
-                                <label class="sidebar-check">
-                                    <input type="checkbox">
-                                    <span class="checkmark"></span>
-                                    Logitech
-                                    <span class="sidebar-count">08</span>
-                                </label>
-                            </li>
-                            <li>
-                                <label class="sidebar-check">
-                                    <input type="checkbox">
-                                    <span class="checkmark"></span>
-                                    Sony
-                                    <span class="sidebar-count">06</span>
-                                </label>
-                            </li>
-                        </ul>
-                    </div>
-
-
-                    <div class="sidebar-block">
-                        <h4 class="sidebar-heading">Rating</h4>
-                        <ul class="sidebar-list">
-                            <li>
-                                <label class="sidebar-check">
-                                    <input type="radio" name="rating">
+                                    <input type="radio" name="rating" data-min-rating="5">
                                     <span class="checkmark"></span>
                                     <span class="sidebar-stars">★★★★★</span>
                                 </label>
                             </li>
                             <li>
                                 <label class="sidebar-check">
-                                    <input type="radio" name="rating">
+                                    <input type="radio" name="rating" data-min-rating="4">
                                     <span class="checkmark"></span>
                                     <span class="sidebar-stars">★★★★☆</span>
                                 </label>
                             </li>
                             <li>
                                 <label class="sidebar-check">
-                                    <input type="radio" name="rating">
+                                    <input type="radio" name="rating" data-min-rating="3">
                                     <span class="checkmark"></span>
                                     <span class="sidebar-stars">★★★☆☆</span>
                                 </label>
@@ -262,10 +237,10 @@
 
 
                     <div class="shop-topbar">
-                        <p class="shop-results">Showing <span>12</span> of <span>48</span> products</p>
+                        <p class="shop-results">Showing <span>12</span> of <span>12</span> products</p>
                         <div class="shop-sort">
                             <label>Sort by:</label>
-                            <select id="sortSelect">
+                            <select id="sortSelect" aria-label="Sort products">
                                 <option value="latest">Latest</option>
                                 <option value="price-low">Price: Low to High</option>
                                 <option value="price-high">Price: High to Low</option>
@@ -279,9 +254,9 @@
 
                         <div class="prod-card" data-category="keyboard" data-price="129" data-rating="5">
                             <div class="prod-img-wrapper">
-                                <img src="./Assets/Images/prod-1.jpg" alt="Gaming Keyboard">
+                                <img alt="Nexus MX Pro RGB gaming keyboard" width="800" height="533" loading="lazy" decoding="async" src="./Assets/Images/prod-1.webp">
                                 <div class="prod-overlay"></div>
-                                <button class="prod-wishlist">
+                                <button class="prod-wishlist" aria-label="Add to wishlist">
                                     <svg viewBox="0 0 24 24">
                                         <path
                                             d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
@@ -304,9 +279,9 @@
 
                         <div class="prod-card" data-category="mouse" data-price="89" data-rating="5">
                             <div class="prod-img-wrapper">
-                                <img src="./Assets/Images/prod-2.jpg" alt="Gaming Mouse">
+                                <img alt="Nexus Viper Elite gaming mouse" width="800" height="461" loading="lazy" decoding="async" src="./Assets/Images/prod-2.webp">
                                 <div class="prod-overlay"></div>
-                                <button class="prod-wishlist">
+                                <button class="prod-wishlist" aria-label="Add to wishlist">
                                     <svg viewBox="0 0 24 24">
                                         <path
                                             d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
@@ -329,9 +304,9 @@
 
                         <div class="prod-card" data-category="headset" data-price="149" data-rating="4">
                             <div class="prod-img-wrapper">
-                                <img src="./Assets/Images/prod-3.jpg" alt="Gaming Headset">
+                                <img alt="Nexus Sound X1 gaming headset" width="800" height="533" loading="lazy" decoding="async" src="./Assets/Images/prod-3.webp">
                                 <div class="prod-overlay"></div>
-                                <button class="prod-wishlist">
+                                <button class="prod-wishlist" aria-label="Add to wishlist">
                                     <svg viewBox="0 0 24 24">
                                         <path
                                             d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
@@ -354,9 +329,9 @@
 
                         <div class="prod-card" data-category="monitor" data-price="399" data-rating="5">
                             <div class="prod-img-wrapper">
-                                <img src="./Assets/Images/prod-4.jpg" alt="Gaming Monitor">
+                                <img alt="Nexus Vision 27-inch gaming monitor" width="800" height="533" loading="lazy" decoding="async" src="./Assets/Images/prod-4.webp">
                                 <div class="prod-overlay"></div>
-                                <button class="prod-wishlist">
+                                <button class="prod-wishlist" aria-label="Add to wishlist">
                                     <svg viewBox="0 0 24 24">
                                         <path
                                             d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
@@ -379,9 +354,9 @@
 
                         <div class="prod-card" data-category="pc" data-price="1999" data-rating="5">
                             <div class="prod-img-wrapper">
-                                <img src="./Assets/Images/prod-5.jpg" alt="Gaming PC">
+                                <img alt="Nexus Titan RTX gaming PC with liquid cooling" width="800" height="771" loading="lazy" decoding="async" src="./Assets/Images/prod-5.webp">
                                 <div class="prod-overlay"></div>
-                                <button class="prod-wishlist">
+                                <button class="prod-wishlist" aria-label="Add to wishlist">
                                     <svg viewBox="0 0 24 24">
                                         <path
                                             d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
@@ -404,9 +379,9 @@
 
                         <div class="prod-card" data-category="keyboard" data-price="99" data-rating="4">
                             <div class="prod-img-wrapper">
-                                <img src="./Assets/Images/prod-6.jpg" alt="Mechanical Keyboard">
+                                <img alt="Nexus TKL mechanical keyboard" width="800" height="533" loading="lazy" decoding="async" src="./Assets/Images/prod-6.webp">
                                 <div class="prod-overlay"></div>
-                                <button class="prod-wishlist">
+                                <button class="prod-wishlist" aria-label="Add to wishlist">
                                     <svg viewBox="0 0 24 24">
                                         <path
                                             d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
@@ -429,9 +404,9 @@
 
                         <div class="prod-card" data-category="console" data-price="69" data-rating="5">
                             <div class="prod-img-wrapper">
-                                <img src="./Assets/Images/prod-7.jpg" alt="PS5 Controller">
+                                <img alt="Red pro console controller" width="800" height="533" loading="lazy" decoding="async" src="./Assets/Images/prod-7.webp">
                                 <div class="prod-overlay"></div>
-                                <button class="prod-wishlist">
+                                <button class="prod-wishlist" aria-label="Add to wishlist">
                                     <svg viewBox="0 0 24 24">
                                         <path
                                             d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
@@ -440,7 +415,7 @@
                             </div>
                             <div class="prod-info">
                                 <span class="prod-tag">Console</span>
-                                <h3 class="prod-name">PS5 DualSense Controller</h3>
+                                <h3 class="prod-name">Pro Console Controller</h3>
                                 <div class="prod-bottom">
                                     <div class="prod-rating">
                                         <span class="stars">★★★★★</span>
@@ -454,9 +429,9 @@
 
                         <div class="prod-card" data-category="console" data-price="59" data-rating="4">
                             <div class="prod-img-wrapper">
-                                <img src="./Assets/Images/prod-8.jpg" alt="Xbox Controller">
+                                <img alt="Black elite console controller" width="800" height="533" loading="lazy" decoding="async" src="./Assets/Images/prod-8.webp">
                                 <div class="prod-overlay"></div>
-                                <button class="prod-wishlist">
+                                <button class="prod-wishlist" aria-label="Add to wishlist">
                                     <svg viewBox="0 0 24 24">
                                         <path
                                             d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
@@ -465,7 +440,7 @@
                             </div>
                             <div class="prod-info">
                                 <span class="prod-tag">Console</span>
-                                <h3 class="prod-name">Xbox Series X Controller</h3>
+                                <h3 class="prod-name">Elite Console Controller</h3>
                                 <div class="prod-bottom">
                                     <div class="prod-rating">
                                         <span class="stars">★★★★☆</span>
@@ -479,9 +454,9 @@
 
                         <div class="prod-card" data-category="pc" data-price="2499" data-rating="5">
                             <div class="prod-img-wrapper">
-                                <img src="./Assets/Images/prod-9.jpg" alt="Gaming Chair">
+                                <img alt="Orange and black gaming chair in a neon-lit setup" width="800" height="533" loading="lazy" decoding="async" src="./Assets/Images/prod-9.webp">
                                 <div class="prod-overlay"></div>
-                                <button class="prod-wishlist">
+                                <button class="prod-wishlist" aria-label="Add to wishlist">
                                     <svg viewBox="0 0 24 24">
                                         <path
                                             d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
@@ -504,9 +479,9 @@
 
                         <div class="prod-card" data-category="mouse" data-price="49" data-rating="4">
                             <div class="prod-img-wrapper">
-                                <img src="./Assets/Images/prod-10.jpg" alt="Gaming Mousepad">
+                                <img alt="Large gaming mousepad with a moonlit landscape print" width="736" height="736" loading="lazy" decoding="async" src="./Assets/Images/prod-10.webp">
                                 <div class="prod-overlay"></div>
-                                <button class="prod-wishlist">
+                                <button class="prod-wishlist" aria-label="Add to wishlist">
                                     <svg viewBox="0 0 24 24">
                                         <path
                                             d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
@@ -529,9 +504,9 @@
 
                         <div class="prod-card" data-category="console" data-price="499" data-rating="5">
                             <div class="prod-img-wrapper">
-                                <img src="./Assets/Images/prod-11.jpg" alt="Gaming Controller">
+                                <img alt="White next-gen gaming console standing upright" width="736" height="1258" loading="lazy" decoding="async" src="./Assets/Images/prod-11.webp">
                                 <div class="prod-overlay"></div>
-                                <button class="prod-wishlist">
+                                <button class="prod-wishlist" aria-label="Add to wishlist">
                                     <svg viewBox="0 0 24 24">
                                         <path
                                             d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
@@ -540,7 +515,7 @@
                             </div>
                             <div class="prod-info">
                                 <span class="prod-tag">Console</span>
-                                <h3 class="prod-name">PlayStation 5 Console</h3>
+                                <h3 class="prod-name">Next-Gen Gaming Console</h3>
                                 <div class="prod-bottom">
                                     <div class="prod-rating">
                                         <span class="stars">★★★★★</span>
@@ -554,9 +529,9 @@
 
                         <div class="prod-card" data-category="pc" data-price="349" data-rating="4">
                             <div class="prod-img-wrapper">
-                                <img src="./Assets/Images/prod-12.jpg" alt="PC Components">
+                                <img alt="Gaming PC internals with RTX graphics card and RGB fans" width="800" height="600" loading="lazy" decoding="async" src="./Assets/Images/prod-12.webp">
                                 <div class="prod-overlay"></div>
-                                <button class="prod-wishlist">
+                                <button class="prod-wishlist" aria-label="Add to wishlist">
                                     <svg viewBox="0 0 24 24">
                                         <path
                                             d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
@@ -598,15 +573,11 @@
                     <a href="index.html" class="footer-logo">NEX<span>US</span></a>
                     <p class="footer-tagline">Gear up. Dominate. Repeat.</p>
                     <div class="footer-socials">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-x-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-discord"></i></a>
+                        <a href="https://github.com/codewithfaseehh59" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="NEXUS developer on GitHub"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
-                    <h4 class="footer-col-heading">Quick Links</h4>
+                    <h2 class="footer-col-heading">Quick Links</h2>
                     <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="shop.html">Shop</a></li>
@@ -615,7 +586,7 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4 class="footer-col-heading">Categories</h4>
+                    <h2 class="footer-col-heading">Categories</h2>
                     <ul class="footer-links">
                         <li><a href="shop.html">PC Builds</a></li>
                         <li><a href="shop.html">Keyboards</a></li>
@@ -626,40 +597,40 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4 class="footer-col-heading">Support</h4>
+                    <h2 class="footer-col-heading">Support</h2>
                     <ul class="footer-links">
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Shipping Policy</a></li>
-                        <li><a href="#">Return Policy</a></li>
-                        <li><a href="#">Track Order</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="shipping.html">Shipping Policy</a></li>
+                        <li><a href="returns.html">Return Policy</a></li>
+                        <li><a href="track-order.html">Track Order</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="footer-col footer-newsletter">
-                    <h4 class="footer-col-heading">Newsletter</h4>
+                    <h2 class="footer-col-heading">Newsletter</h2>
                     <p class="footer-newsletter-text">Get exclusive deals and latest drops straight to your inbox.</p>
                     <div class="newsletter-form">
-                        <input type="email" placeholder="Your email address">
-                        <button class="newsletter-btn">
+                        <input type="email" placeholder="Your email address" aria-label="Email address">
+                        <button class="newsletter-btn" aria-label="Subscribe to newsletter">
                             <i class="fas fa-arrow-right"></i>
                         </button>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p class="footer-copy">© 2024 NEXUS. All rights reserved.</p>
+                <p class="footer-copy">© 2026 NEXUS. All rights reserved.</p>
                 <p class="footer-credit">Designed & Built with <span>♥</span></p>
             </div>
         </footer>
 
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script type="text/javascript" src="https://unpkg.com/sheryjs/dist/Shery.js"></script>
-    <script src="./Assets/js/main.js"></script>
-    <script src="./Assets/js/shop.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script defer src="./Assets/js/main.js"></script>
+    <script defer src="./Assets/js/store.js"></script>
+    <script defer src="./Assets/js/shop.js"></script>
 
 </body>
 

@@ -4,14 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEXUS — Product</title>
+    <title>Nexus MX Pro Keyboard — NEXUS</title>
+    <meta name="description" content="Nexus MX Pro mechanical gaming keyboard with per-key RGB lighting, hot-swappable switches and a durable build. See details, reviews and related gear.">
+    <meta name="theme-color" content="#050508">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NEXUS">
+    <meta property="og:title" content="Nexus MX Pro Keyboard — NEXUS">
+    <meta property="og:description" content="Nexus MX Pro mechanical gaming keyboard with per-key RGB lighting, hot-swappable switches and a durable build. See details, reviews and related gear.">
+    <meta property="og:image" content="Assets/Images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Nexus MX Pro Keyboard — NEXUS">
+    <meta name="twitter:description" content="Nexus MX Pro mechanical gaming keyboard with per-key RGB lighting, hot-swappable switches and a durable build. See details, reviews and related gear.">
+    <meta name="twitter:image" content="Assets/Images/og-image.jpg">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        crossorigin="anonymous" referrerpolicy="no-referrer" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" /></noscript>
     <link rel="stylesheet" href="./Assets/css/main.css">
-    <link rel="stylesheet" href="./Assets/css/component.css">
     <link rel="stylesheet" href="./Assets/css/responsive.css">
 </head>
 
@@ -50,8 +64,8 @@
                 </ul>
                 <div class="nav-actions">
                     <div class="nav-search">
-                        <input type="text" placeholder="Search products...">
-                        <button class="search-icon">
+                        <input type="text" placeholder="Search products..." aria-label="Search products">
+                        <button class="search-icon" aria-label="Toggle search">
                             <svg viewBox="0 0 24 24">
                                 <circle cx="11" cy="11" r="8" />
                                 <path d="m21 21-4.35-4.35" />
@@ -66,7 +80,7 @@
                         </svg>
                         <span class="cart-count">0</span>
                     </a>
-                    <button class="hamburger" id="hamburger">
+                    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -100,22 +114,22 @@
                 <div class="product-images">
 
                     <div class="product-thumbnails">
-                        <div class="thumb active" data-img="./Assets/Images/product-main.jpg">
-                            <img src="./Assets/Images/product-main.jpg" alt="Main">
+                        <div class="thumb active" data-img="./Assets/Images/product-main.webp">
+                            <img alt="Nexus MX Pro keyboard with red backlit keys" width="1200" height="800" src="./Assets/Images/product-main.webp">
                         </div>
-                        <div class="thumb" data-img="./Assets/Images/product-thumb-1.jpg">
-                            <img src="./Assets/Images/product-thumb-1.jpg" alt="Thumb 1">
+                        <div class="thumb" data-img="./Assets/Images/product-thumb-1.webp">
+                            <img alt="Nexus MX Pro keyboard, alternate view 1" width="800" height="533" src="./Assets/Images/product-thumb-1.webp">
                         </div>
-                        <div class="thumb" data-img="./Assets/Images/product-thumb-2.jpg">
-                            <img src="./Assets/Images/product-thumb-2.jpg" alt="Thumb 2">
+                        <div class="thumb" data-img="./Assets/Images/product-thumb-2.webp">
+                            <img alt="Nexus MX Pro keyboard, alternate view 2" width="800" height="533" src="./Assets/Images/product-thumb-2.webp">
                         </div>
-                        <div class="thumb" data-img="./Assets/Images/product-thumb-3.jpg">
-                            <img src="./Assets/Images/product-thumb-3.jpg" alt="Thumb 3">
+                        <div class="thumb" data-img="./Assets/Images/product-thumb-3.webp">
+                            <img alt="Nexus MX Pro keyboard, alternate view 3" width="800" height="533" src="./Assets/Images/product-thumb-3.webp">
                         </div>
                     </div>
 
                     <div class="product-main-img">
-                        <img src="./Assets/Images/product-main.jpg" alt="Nexus MX Pro Keyboard" id="mainProductImg">
+                        <img alt="Nexus MX Pro keyboard with red backlit keys" width="1200" height="800" src="./Assets/Images/product-main.webp" id="mainProductImg">
                         <div class="product-img-glow"></div>
                     </div>
 
@@ -160,7 +174,7 @@
                             <i class="fas fa-shopping-bag"></i>
                             Add to Cart
                         </button>
-                        <button class="product-wishlist-btn">
+                        <button class="product-wishlist-btn" aria-label="Add to wishlist">
                             <svg viewBox="0 0 24 24">
                                 <path
                                     d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
@@ -195,7 +209,7 @@
                                 <span class="accordion-icon">+</span>
                             </button>
                             <div class="accordion-body">
-                                <p class="accordion-text">Free standard shipping on all orders over $50. Express
+                                <p class="accordion-text">Free standard shipping on every order. Express
                                     delivery available at checkout. Orders ship within 1-2 business days.</p>
                             </div>
                         </div>
@@ -226,9 +240,9 @@
 
                     <div class="prod-card" data-category="mouse">
                         <div class="prod-img-wrapper">
-                            <img src="./Assets/Images/prod-2.jpg" alt="Gaming Mouse">
+                            <img alt="Nexus Viper Elite gaming mouse" width="800" height="461" loading="lazy" decoding="async" src="./Assets/Images/prod-2.webp">
                             <div class="prod-overlay"></div>
-                            <button class="prod-wishlist">
+                            <button class="prod-wishlist" aria-label="Add to wishlist">
                                 <svg viewBox="0 0 24 24">
                                     <path
                                         d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
@@ -251,9 +265,9 @@
 
                     <div class="prod-card" data-category="headset">
                         <div class="prod-img-wrapper">
-                            <img src="./Assets/Images/prod-3.jpg" alt="Gaming Headset">
+                            <img alt="Nexus Sound X1 gaming headset" width="800" height="533" loading="lazy" decoding="async" src="./Assets/Images/prod-3.webp">
                             <div class="prod-overlay"></div>
-                            <button class="prod-wishlist">
+                            <button class="prod-wishlist" aria-label="Add to wishlist">
                                 <svg viewBox="0 0 24 24">
                                     <path
                                         d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
@@ -276,9 +290,9 @@
 
                     <div class="prod-card" data-category="monitor">
                         <div class="prod-img-wrapper">
-                            <img src="./Assets/Images/prod-4.jpg" alt="Gaming Monitor">
+                            <img alt="Nexus Vision 27-inch gaming monitor" width="800" height="533" loading="lazy" decoding="async" src="./Assets/Images/prod-4.webp">
                             <div class="prod-overlay"></div>
-                            <button class="prod-wishlist">
+                            <button class="prod-wishlist" aria-label="Add to wishlist">
                                 <svg viewBox="0 0 24 24">
                                     <path
                                         d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
@@ -301,9 +315,9 @@
 
                     <div class="prod-card" data-category="keyboard">
                         <div class="prod-img-wrapper">
-                            <img src="./Assets/Images/prod-6.jpg" alt="Mechanical Keyboard">
+                            <img alt="Nexus TKL mechanical keyboard" width="800" height="533" loading="lazy" decoding="async" src="./Assets/Images/prod-6.webp">
                             <div class="prod-overlay"></div>
-                            <button class="prod-wishlist">
+                            <button class="prod-wishlist" aria-label="Add to wishlist">
                                 <svg viewBox="0 0 24 24">
                                     <path
                                         d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
@@ -335,15 +349,11 @@
                     <a href="index.html" class="footer-logo">NEX<span>US</span></a>
                     <p class="footer-tagline">Gear up. Dominate. Repeat.</p>
                     <div class="footer-socials">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-x-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-discord"></i></a>
+                        <a href="https://github.com/codewithfaseehh59" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="NEXUS developer on GitHub"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
-                    <h4 class="footer-col-heading">Quick Links</h4>
+                    <h2 class="footer-col-heading">Quick Links</h2>
                     <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="shop.html">Shop</a></li>
@@ -352,7 +362,7 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4 class="footer-col-heading">Categories</h4>
+                    <h2 class="footer-col-heading">Categories</h2>
                     <ul class="footer-links">
                         <li><a href="shop.html">PC Builds</a></li>
                         <li><a href="shop.html">Keyboards</a></li>
@@ -363,40 +373,40 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4 class="footer-col-heading">Support</h4>
+                    <h2 class="footer-col-heading">Support</h2>
                     <ul class="footer-links">
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Shipping Policy</a></li>
-                        <li><a href="#">Return Policy</a></li>
-                        <li><a href="#">Track Order</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="shipping.html">Shipping Policy</a></li>
+                        <li><a href="returns.html">Return Policy</a></li>
+                        <li><a href="track-order.html">Track Order</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="footer-col footer-newsletter">
-                    <h4 class="footer-col-heading">Newsletter</h4>
+                    <h2 class="footer-col-heading">Newsletter</h2>
                     <p class="footer-newsletter-text">Get exclusive deals and latest drops straight to your inbox.</p>
                     <div class="newsletter-form">
-                        <input type="email" placeholder="Your email address">
-                        <button class="newsletter-btn">
+                        <input type="email" placeholder="Your email address" aria-label="Email address">
+                        <button class="newsletter-btn" aria-label="Subscribe to newsletter">
                             <i class="fas fa-arrow-right"></i>
                         </button>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p class="footer-copy">© 2024 NEXUS. All rights reserved.</p>
+                <p class="footer-copy">© 2026 NEXUS. All rights reserved.</p>
                 <p class="footer-credit">Designed & Built with <span>♥</span></p>
             </div>
         </footer>
 
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script type="text/javascript" src="https://unpkg.com/sheryjs/dist/Shery.js"></script>
-    <script src="./Assets/js/main.js"></script>
-    <script src="./Assets/js/product.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script defer src="./Assets/js/main.js"></script>
+    <script defer src="./Assets/js/store.js"></script>
+    <script defer src="./Assets/js/product.js"></script>
 
 </body>
 
