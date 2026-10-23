@@ -38,11 +38,9 @@ function initLocoScroll() {
   return locoScroll;
 }
 
-const SHERY_VERSION = "1.0.0-beta.0.1.8";
-
 function loadShery() {
   return new Promise(resolve => {
-    const base = "https://unpkg.com/sheryjs@" + SHERY_VERSION + "/dist/Shery";
+    const base = "./Assets/vendor/Shery";
 
     const style = document.createElement("link");
     style.rel = "stylesheet";
@@ -207,42 +205,48 @@ function initStatsCounter() {
   const counts = document.querySelectorAll(".count");
   if (!counts.length) return;
 
+  const format = (target, value) => {
+    const isDecimal = target % 1 !== 0;
+    return isDecimal
+      ? parseFloat(value).toFixed(1)
+      : Math.floor(value).toLocaleString();
+  };
+
   if (reduceMotion) {
     counts.forEach(count => {
       const target = parseFloat(count.getAttribute("data-target"));
-      count.innerText = target % 1 !== 0 ? target.toFixed(1) : target.toLocaleString();
+      count.innerText = format(target, target);
     });
     return;
   }
 
-  counts.forEach(count => {
-    const target = parseFloat(count.getAttribute("data-target"));
-    const isDecimal = target % 1 !== 0;
+  ScrollTrigger.create({
+    trigger: "#stats",
+    scroller: "#wrapper",
+    start: "top 80%",
+    once: true,
+    onEnter: () => {
+      counts.forEach(count => {
+        const target = parseFloat(count.getAttribute("data-target"));
+        const isDecimal = target % 1 !== 0;
 
-    ScrollTrigger.create({
-      trigger: "#stats",
-      scroller: "#wrapper",
-      start: "top 80%",
-      once: true,
-      onEnter: () => {
         gsap.to(count, {
           innerText: target,
           duration: 2,
           ease: "power2.out",
           snap: isDecimal ? { innerText: 0.1 } : { innerText: 1 },
           onUpdate: function () {
-            count.innerText = isDecimal
-              ? parseFloat(count.innerText).toFixed(1)
-              : Math.floor(count.innerText).toLocaleString();
+            count.innerText = format(target, count.innerText);
           }
         });
-      }
-    });
+      });
+    }
   });
 }
 
 function initScrollReveals() {
   if (reduceMotion) return;
+
   const revealElements = [
     { selector: "#stats .stat-item", stagger: 0.15 },
     { selector: ".categories-header", stagger: 0 },
@@ -250,15 +254,17 @@ function initScrollReveals() {
     { selector: ".fp-filters", stagger: 0 },
     { selector: ".prod-card", stagger: 0.1 },
     { selector: ".bp-content", stagger: 0 },
-  ];
+  ].filter(({ selector }) => document.querySelector(selector));
+
+  // Apply every start state first so the triggers below only read layout once
+  revealElements.forEach(({ selector }) => {
+    gsap.set(selector, { opacity: 0, y: 50 });
+  });
 
   revealElements.forEach(({ selector, stagger }) => {
-    const el = document.querySelector(selector);
-    if (!el) return;
-
-    gsap.from(selector, {
-      opacity: 0,
-      y: 50,
+    gsap.to(selector, {
+      opacity: 1,
+      y: 0,
       duration: 0.9,
       ease: "power3.out",
       stagger: stagger,
@@ -385,13 +391,13 @@ function initLoader(onComplete) {
     } })
       .to(".loader-content", {
         opacity: 0,
-        duration: 0.2,
+        duration: 0.15,
         ease: "power2.in",
       })
-      .to(splitTop, { translateY: "0%", duration: 0.3, ease: "power4.inOut" }, "-=0.1")
-      .to(splitBottom, { translateY: "0%", duration: 0.3, ease: "power4.inOut" }, "<")
-      .to(splitTop, { translateY: "-100%", duration: 0.4, ease: "power4.inOut" })
-      .to(splitBottom, { translateY: "100%", duration: 0.4, ease: "power4.inOut" }, "<");
+      .to(splitTop, { translateY: "0%", duration: 0.25, ease: "power4.inOut" }, "-=0.1")
+      .to(splitBottom, { translateY: "0%", duration: 0.25, ease: "power4.inOut" }, "<")
+      .to(splitTop, { translateY: "-100%", duration: 0.3, ease: "power4.inOut" })
+      .to(splitBottom, { translateY: "100%", duration: 0.3, ease: "power4.inOut" }, "<");
   };
 
   const state = { value: 0 };
@@ -404,7 +410,7 @@ function initLoader(onComplete) {
   gsap.timeline()
     .to(state, {
       value: 0.9,
-      duration: 0.6,
+      duration: 0.35,
       ease: "power1.out",
       onUpdate: setProgress,
     })
@@ -412,7 +418,7 @@ function initLoader(onComplete) {
       const complete = () => {
         gsap.to(state, {
           value: 1,
-          duration: 0.15,
+          duration: 0.1,
           ease: "none",
           onUpdate: setProgress,
           onComplete: finish,
@@ -435,16 +441,28 @@ function init() {
   }
 
   initLoader(() => {
-    const locoScroll = initLocoScroll();
-    initCursorEffects();
-    initNavbar(locoScroll);
-    initSearch();
-    initMobileMenu();
-    initHeroAnimations();
-    initStatsCounter();
-    initScrollReveals();
-    initHorizontalScroll();
-    initProductFilter(locoScroll);
+    let locoScroll;
+
+    const steps = [
+      () => { locoScroll = initLocoScroll(); },
+      () => initCursorEffects(),
+      () => { initNavbar(locoScroll); initSearch(); initMobileMenu(); },
+      () => initHeroAnimations(),
+      () => initStatsCounter(),
+      () => initScrollReveals(),
+      () => initHorizontalScroll(),
+      () => initProductFilter(locoScroll),
+    ];
+
+    // One step per task keeps the main thread free to paint between them
+    const runNext = () => {
+      const step = steps.shift();
+      if (!step) return;
+      step();
+      setTimeout(runNext, 0);
+    };
+
+    runNext();
   });
 }
 

@@ -44,7 +44,7 @@
         </div>
         <p class="cart-item-subtotal">${formatMoney(item.price * item.qty)}</p>
         <button class="cart-item-remove" aria-label="Remove ${name}">
-          <i class="fas fa-times"></i>
+          <svg class="ico" aria-hidden="true"><use href="./Assets/icons.svg#xmark"/></svg>
         </button>
       </div>
     `;
@@ -91,7 +91,7 @@
   function showEmptyCart() {
     list.innerHTML = `
       <div class="cart-empty">
-        <i class="fas fa-shopping-bag"></i>
+        <svg class="ico" aria-hidden="true"><use href="./Assets/icons.svg#bag-shopping"/></svg>
         <h2>Your cart is empty</h2>
         <p>Looks like you haven't added anything yet.</p>
         <a href="shop.html" class="btn-primary">Start Shopping</a>

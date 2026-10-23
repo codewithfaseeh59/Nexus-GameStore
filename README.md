@@ -61,11 +61,9 @@ nexus/
       │
       ├── Fonts/
       │     ├── Barlow/
-      │     │     ├── BarlowCondensed-Regular.ttf
-      │     │     └── BarlowCondensed-Bold.ttf
+      │     │     ├── BarlowCondensed-Regular.woff2
       │     └── SpaceMono/
-      │           ├── SpaceMono-Regular.ttf
-      │           └── SpaceMono-Bold.ttf
+      │           ├── SpaceMono-Regular.woff2
       │
       └── Images/
             ├── hero-bg.webp
@@ -136,54 +134,17 @@ font-size: clamp(4rem, 12vw, 10rem);
 
 ---
 
-## 📦 CDNs Used
+## 📦 Libraries (self-hosted)
 
-### CSS — paste in `<head>` of every page
-```html
-<!-- Locomotive Scroll CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+All third-party code lives in `Assets/vendor/`, so the site loads from a single origin:
 
-<!-- SheryJS CSS -->
-<link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" />
+| File | Version |
+|------|---------|
+| `gsap.min.js`, `ScrollTrigger.min.js` | GSAP 3.12.2 |
+| `locomotive-scroll.min.js` / `.css` | Locomotive Scroll 4.1.4 |
+| `Shery.js` / `.css` | SheryJS 1.0.0-beta.0.1.8 (desktop only, loaded on demand) |
 
-<!-- Font Awesome 7 -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-```
-
-### JS — paste before `</body>` of every page
-```html
-<!-- Locomotive Scroll -->
-<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
-
-<!-- GSAP -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-
-<!-- GSAP ScrollTrigger -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-
-<!-- SheryJS -->
-<script src="https://unpkg.com/sheryjs/dist/Shery.js"></script>
-
-<!-- Main JS + shared cart module — every page -->
-<script defer src="./Assets/js/main.js"></script>
-<script defer src="./Assets/js/store.js"></script>
-```
-
-### Page Specific JS
-```html
-<!-- shop.html only -->
-<script defer src="./Assets/js/shop.js"></script>
-
-<!-- product.html only -->
-<script defer src="./Assets/js/product.js"></script>
-
-<!-- cart.html only -->
-<script defer src="./Assets/js/cart.js"></script>
-```
-
----
+Icons are an inline SVG sprite (`Assets/icons.svg`, Font Awesome Free, CC BY 4.0). Fonts are WOFF2.
 
 ## 🧠 JavaScript Architecture
 
@@ -335,7 +296,7 @@ All breakpoints are in `responsive.css`.
 | [ScrollTrigger](https://greensock.com/scrolltrigger/) | Scroll animations |
 | [Locomotive Scroll v4](https://locomotivemtl.github.io/locomotive-scroll/) | Smooth scroll |
 | [SheryJS](https://github.com/aayushchouhan24/sheryjs) | Custom cursor & magnetic |
-| [Font Awesome 7](https://fontawesome.com/) | Icons |
+| [Font Awesome Free](https://fontawesome.com/) | Icons (SVG sprite) |
 
 ---
 

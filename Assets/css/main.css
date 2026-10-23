@@ -1,12 +1,12 @@
 @font-face {
     font-family: "barlow";
-    src: url("../Fonts/Barlow/BarlowCondensed-Regular.ttf");
+    src: url("../Fonts/Barlow/BarlowCondensed-Regular.woff2") format("woff2");
     font-display: swap;
 }
 
 @font-face {
     font-family: "spaceMono";
-    src: url("../Fonts/SpaceMono/SpaceMono-Regular.ttf");
+    src: url("../Fonts/SpaceMono/SpaceMono-Regular.woff2") format("woff2");
     font-display: swap;
 }
 
@@ -1058,7 +1058,7 @@ select {
     font-size: max(clamp(0.5rem, 0.7vw, 0.6rem), var(--min-font-size));
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: #7b2fff;
+    color: #9a63ff;
     margin-bottom: 8px;
     display: block;
 }
@@ -1881,7 +1881,7 @@ select {
 .price-old {
     font-family: "spaceMono";
     font-size: max(clamp(0.65rem, 0.9vw, 0.8rem), var(--min-font-size));
-    color: #555555;
+    color: #888888;
     text-decoration: line-through;
 }
 
@@ -1970,7 +1970,7 @@ select {
     font-size: max(clamp(0.6rem, 0.8vw, 0.75rem), var(--min-font-size));
 }
 
-.product-cart-btn i {
+.product-cart-btn .ico {
     font-size: 14px;
 }
 
@@ -2338,7 +2338,7 @@ select {
     font-size: max(clamp(0.6rem, 0.8vw, 0.75rem), var(--min-font-size));
 }
 
-.checkout-btn i {
+.checkout-btn .ico {
     font-size: 12px;
 }
 
@@ -2469,7 +2469,7 @@ select {
     justify-content: center;
 }
 
-.value-icon i {
+.value-icon .ico {
     font-size: 20px;
     color: #7b2fff;
 }
@@ -2619,7 +2619,7 @@ select {
     flex-shrink: 0;
 }
 
-.contact-detail-icon i {
+.contact-detail-icon .ico {
     font-size: 14px;
     color: #7b2fff;
 }
@@ -2707,7 +2707,7 @@ select {
     font-size: max(clamp(0.6rem, 0.8vw, 0.75rem), var(--min-font-size));
 }
 
-.contact-submit-btn i {
+.contact-submit-btn .ico {
     font-size: 12px;
 }
 #contact-map {
@@ -2715,6 +2715,15 @@ select {
     width: 100%;
     filter: grayscale(100%) invert(92%) hue-rotate(180deg);
     opacity: 0.6;
+}
+
+.ico {
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+    display: inline-block;
+    vertical-align: -0.125em;
+    flex-shrink: 0;
 }
 
 .native-cursor,
@@ -2761,7 +2770,7 @@ select {
     background: #0e0e14;
 }
 
-.cart-empty i {
+.cart-empty .ico {
     font-size: 40px;
     color: #7b2fff;
 }

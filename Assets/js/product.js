@@ -92,7 +92,7 @@ function initAddToCart() {
       yoyo: true,
       repeat: 1,
       onComplete: () => {
-        cartBtn.innerHTML = `<i class="fas fa-check"></i> Added!`;
+        cartBtn.innerHTML = `<svg class="ico" aria-hidden="true"><use href="./Assets/icons.svg#check"/></svg> Added!`;
         cartBtn.style.background = "#1a1a2e";
         cartBtn.style.borderColor = "#7b2fff";
 
